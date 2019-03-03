@@ -1,0 +1,29 @@
+{
+    "server" : {
+        "folder" : "~/go/src/github.com/michalnov/psychology",
+        "port": ":1133",
+	"host" : "localhost"
+    },
+    "mailer" : {
+        "username" : "",
+        "password" : ""
+    },
+    "database" : {
+        "master" : {
+            "active" : true,
+            "user": "",
+            "password": "",
+            "port" : "3306",
+            "name" : "psyche",
+            "address" : "194.160.229.181"
+        },
+        "slave" : {
+            "active" : false,
+            "user": "root",
+            "password": "secret",
+            "port" : "3307",
+            "name" : "",
+            "address" : ""
+        }
+    }
+}
