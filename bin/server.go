@@ -5,8 +5,8 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/michalnov/psychology/bin/core"
 	"github.com/michalnov/psychology/bin/core/config"
-	_ "github.com/michalnov/psychology/bin/core/structures"
 
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
@@ -19,6 +19,12 @@ func main() {
 	conf, err := config.ReadConfig()
 	if err != nil {
 		fmt.Println("Failed to read config")
+		return
+	}
+	var c core.Core
+	err = c.LoadTests()
+	if err != nil {
+		fmt.Println("failed to load tests")
 		return
 	}
 	r = mux.NewRouter()
