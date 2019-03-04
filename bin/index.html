@@ -12,14 +12,90 @@
 <body>
     <div class="container-fluid">
         <div class="row" id="about">
-
+            <div> 
+                <table id="headform" style="width:85%; margin:auto; margin-top: 5%;">
+                    <tr>
+                        <td><h4>Kluc</h4></td>
+                        <td><input type="text" id="kluc"></td>
+                    </tr>
+                    <tr>
+                        <td><h4>Vek</h4></td>
+                        <td><input type="text" id="vek"></td>
+                    </tr>
+                    <tr>
+                        <td><h4>Rod</h4></td>
+                        <td><input type="text" id="rod"></td>
+                    </tr>
+                    <tr>
+                        <td><h4>Škola  </h4></td>
+                        <td><input type="text" id="skola"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button type="button" class="btn btn-success" onclick="sendForm()">Odoslat</button></td>
+                    </tr>
+                </table>
+            </div>
         </div>
-        <div class="row" id="state">
-
+        <div style="display: none;" id="instruction">
+            <h4 style="width:95%; margin:auto;margin-top: 5%; margin-bottom: 5%;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of</h4>
+            <button type="button" class="btn btn-primary" style="margin-left: 25%;" onclick="selectTest()">Zacat test</button>
         </div>
-        <div class="row" id="test">
-            
+        <div style="display: none;" id="selectTest">
+            <div style="margin-top: 10px; border-style: solid; border-width:1px; border-radius:7px;">
+                <p style="width:85%; margin:auto;" onclick="startTest('vztah')">Vztahy Ipsum is simply dummy <br> text of the printing</button>
+            </div>
+            <div style="margin-top: 10px; border-style: solid; border-width:1px; border-radius:7px;">
+                    <p style="width:85%; margin:auto;" onclick="startTest('zazitky')">zazitky Ipsum is simply dummy <br> text of the printing</button>
+            </div>
+            <div style="margin-top: 10px; border-style: solid; border-width:1px; border-radius:7px;">
+                    <p style="width:85%; margin:auto;" onclick="startTest('praca')">praca Ipsum is simply dummy <br> text of the printing</button>
+            </div>
+        </div>
+        <div  style="display: none;" id="test">
+            <p><h4 style="width:85%; margin:auto; margin-top: 5%">10. Dostal si novú pracovnú ponuku. Pracovná pozícia je vyššia ako tá, ktorú si mal/a doteraz ale finančné ohodnotenie je nižšie ako to, ktoré máš teraz. Prijmeš túto novú ponuku?</h4></p>
+            <div style="margin-top: 10px; border-style: solid; border-width:1px; border-radius:7px;">
+                <p style="width:85%; margin:auto;">Zameriam sa skôr na pracovné vzťahy s nadriadeným a kolegami.</p>
+            </div>
+            <div style="margin-top: 8px; border-style: solid; border-width:1px; border-radius:7px;">
+                <p style="width:85%; margin:auto;">Skúsim zariskovať na možný úkor svojho miesta ale s možnosťou vysokého postupu a zvýšenia platu.</p>
+            </div>
+            <div style="margin-top: 8px; border-style: solid; border-width:1px; border-radius:7px;">
+                <p style="width:85%; margin:auto;">Nechcem odpovedat</p>
+            </div>
+        </div>
+        <div  style="display: none;" id="finish">
+
         </div>
     </div>
+
+    <script>
+        function sendForm(){
+
+            console.log("aaaa");
+            var x = document.getElementById("headform");
+            x.style.display = "none";
+            document.getElementById("instruction").style.display = "block";
+        }
+
+        function selectTest(){
+            document.getElementById("instruction").style.display = "none";
+            document.getElementById("selectTest").style.display = "block";
+        }
+
+        function startTest(param) {
+            if (param == "vztah") {
+                console.log(param);
+            }    
+            if (param == "praca") {
+                console.log(param);
+            }
+            if (param == "zazitky") {
+                console.log(param);
+            }       
+            document.getElementById("selectTest").style.display = "none";
+            document.getElementById("test").style.display = "block";
+        }
+    </script>
 </body>
 </html>

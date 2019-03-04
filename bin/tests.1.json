@@ -3,11 +3,11 @@
     "description" : "some text",
     "que" : [
         {
-            "text" : "question text",
+            "text" : "Na základe čoho si vyberieš svoje povolanie?",
             "questionid" : 1,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Vyberiem si podľa toho, kde mám veľmi vplyvné známosti a kontakty.",
                     "answerid" : 101
                 },
                 {
