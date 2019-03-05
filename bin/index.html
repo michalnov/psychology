@@ -140,16 +140,31 @@
     <script>
         let host = "itsovy.sk:1234";
         let ping = setInterval(pingMe,7700);
-        let test = "";
+        let test = null;
         let user = {};
         let userID = 0;
 
-        
+        class Test{
+            constructor(param){
+                this.auth = {
+                    userid : userID,
+                    testid : param.testid
+                },
+                this.description = param.description,
+                this.questions = param.que,
+                this.qcounter = 0,
+                this.tlen = param.length
+            }
+        }
+
         function setErr(params) {
             document.getElementById("err"+params).style.backgroundColor = "red";
         }
         function clearErr() {
-            document.getElementsByName("dotErr").style.backgroundColor = "transparent";
+            document.getElementById("errvek").style.backgroundColor = "transparent";
+            document.getElementById("errskola").style.backgroundColor = "transparent";
+            document.getElementById("errrod").style.backgroundColor = "transparent";
+            document.getElementById("errkluc").style.backgroundColor = "transparent";
         }
         function pingMe() {
             var xhttp = new XMLHttpRequest();
