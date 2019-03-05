@@ -28,7 +28,7 @@ func main() {
 		return
 	}
 	r = mux.NewRouter()
-	r.HandleFunc("/register", notImplemented).Methods("post")
+	r.HandleFunc("/user", notImplemented).Methods("post")
 	r.HandleFunc("/gettest", notImplemented).Methods("post")
 	r.HandleFunc("/starttest", notImplemented).Methods("post")
 	r.HandleFunc("/answer", notImplemented).Methods("post")

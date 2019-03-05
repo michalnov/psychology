@@ -129,7 +129,7 @@
     <script>
         function overlayOn() {
             document.getElementById("overlay").style.display = "block";
-            setTimeout(overlayOff,3000);
+            setTimeout(overlayOff,30000);
         }
         
         function overlayOff() {
@@ -140,7 +140,7 @@
     <script>
         let host = "itsovy.sk:1234";
         let ping = setInterval(pingMe,7700);
-        let test = null;
+        let test = {};
         let user = {};
         let userID = 0;
 
