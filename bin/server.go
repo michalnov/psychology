@@ -17,6 +17,7 @@ var r *mux.Router
 func main() {
 	fmt.Println("Hello server")
 	conf, err := config.ReadConfig()
+	fmt.Println(conf.Server.Port)
 	if err != nil {
 		fmt.Println("Failed to read config")
 		return

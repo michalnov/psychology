@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"path/filepath"
 
 	"github.com/michalnov/psychology/bin/core/structures"
 
@@ -90,17 +89,17 @@ func (c *Core) GetTest(w http.ResponseWriter, r *http.Request) {
 //LoadTests -
 func (c *Core) LoadTests() error {
 	var swap structures.Test
-	swap, err := readTest("test1")
+	swap, err := readTest("tests1.json")
 	if err != nil {
 		return err
 	}
 	c.Tests = append(c.Tests, swap)
-	swap, err = readTest("test2")
+	swap, err = readTest("tests2.json")
 	if err != nil {
 		return err
 	}
 	c.Tests = append(c.Tests, swap)
-	swap, err = readTest("test3")
+	swap, err = readTest("tests3.json")
 	if err != nil {
 		return err
 	}
@@ -111,11 +110,9 @@ func (c *Core) LoadTests() error {
 //readTest -
 func readTest(name string) (structures.Test, error) {
 	out := structures.Test{}
-	absPath, _ := filepath.Abs(name + ".json")
-	fmt.Println("Database Opening configuration File")
-	temFile, err := ioutil.ReadFile(absPath)
+	temFile, err := ioutil.ReadFile(name)
 	if err != nil {
-		fmt.Println("Reading Db config failed")
+		fmt.Println("Reading tests failed")
 		return out, err
 	}
 	err = json.Unmarshal(temFile, &out)
