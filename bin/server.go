@@ -29,11 +29,11 @@ func main() {
 		return
 	}
 	r = mux.NewRouter()
-	r.HandleFunc("/user", notImplemented).Methods("post")
-	r.HandleFunc("/gettest", notImplemented).Methods("post")
-	r.HandleFunc("/ping", c.Ping).Methods("get")
-	r.HandleFunc("/answer", notImplemented).Methods("post")
-	r.HandleFunc("/finishtest", notImplemented).Methods("post")
+	r.HandleFunc("/user", c.UserHandler).Methods("POST")
+	r.HandleFunc("/gettest", c.GetTest).Methods("POST")
+	r.HandleFunc("/ping", c.Ping).Methods("GET")
+	r.HandleFunc("/answer", notImplemented).Methods("POST")
+	r.HandleFunc("/finishtest", notImplemented).Methods("POST")
 	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "index.html")
 	})
