@@ -220,6 +220,8 @@
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
+                    swap = JSON.parse(this.responseText)
+                    userID = swap.user
                     selectTest();
                 }
             };
@@ -255,7 +257,7 @@
             };
             xhttp.open("POST", host+"/gettest", true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send("{\"test\":\""+param+"\"}");
+            xhttp.send("{\"test\":\""+param+"\",\"userid\":\""+userID+"\"}");
             document.getElementById("selectTest").style.display = "none";
             document.getElementById("test").style.display = "block";
         }

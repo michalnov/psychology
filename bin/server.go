@@ -30,7 +30,7 @@ func main() {
 	r = mux.NewRouter()
 	r.HandleFunc("/user", notImplemented).Methods("post")
 	r.HandleFunc("/gettest", notImplemented).Methods("post")
-	r.HandleFunc("/starttest", notImplemented).Methods("post")
+	r.HandleFunc("/ping", c.Ping).Methods("post")
 	r.HandleFunc("/answer", notImplemented).Methods("post")
 	r.HandleFunc("/finishtest", notImplemented).Methods("post")
 	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {

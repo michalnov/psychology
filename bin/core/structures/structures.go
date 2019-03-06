@@ -13,6 +13,7 @@ type Req struct {
 //Test -
 type Test struct {
 	Description string     `json:"description,ommitempty"`
+	Key         string     `json:"testkey,ommitempty"`
 	TestID      int        `json:"testid,ommitempty"`
 	Que         []Question `json:"que,ommitempty"`
 }

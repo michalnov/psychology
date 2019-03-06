@@ -27,6 +27,12 @@ type user struct {
 	Skola string `json:"skola"`
 }
 
+//Ping --
+func (c *Core) Ping(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(200)
+	fmt.Fprintf(w, "{\"status\" : \"ok\"}")
+}
+
 //UserHandler --
 func (c *Core) UserHandler(w http.ResponseWriter, r *http.Request) {
 	var req user
@@ -52,8 +58,33 @@ func (c *Core) UserHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "{\"user\" : \""+string(id)+"\"}")
 }
 
+type getTest struct {
+	Test   string `json:"test"`
+	UserID int    `json:"userid"`
+}
+
+//GetTest --
 func (c *Core) GetTest(w http.ResponseWriter, r *http.Request) {
-	var req string
+	var req getTest
+	err := json.NewDecoder(r.Body).Decode(&req)
+	if err != nil {
+		w.WriteHeader(300)
+		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+	}
+	for _, test := range c.Tests {
+		if test.Key == req.Test {
+			resp, err := json.MarshalIndent(test, "  ", "    ")
+			if err != nil {
+				w.WriteHeader(500)
+				fmt.Fprintf(w, "{\"status\" : \"error\"}")
+			}
+			w.WriteHeader(200)
+			fmt.Fprintf(w, string(resp))
+		}
+	}
+	w.WriteHeader(500)
+	fmt.Fprintf(w, "{\"status\" : \"error\"}")
+
 }
 
 //LoadTests -
