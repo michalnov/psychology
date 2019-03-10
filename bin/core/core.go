@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"strconv"
 
 	"github.com/michalnov/psychology/bin/core/structures"
 
@@ -60,9 +61,21 @@ func (c *Core) UserHandler(w http.ResponseWriter, r *http.Request) {
 	var id int
 	_ = statement.QueryRow(req.Vek, req.Rod, req.Skola, req.Kluc)
 	statement2, err := db.Prepare("SELECT LAST_INSERT_ID")
+	if err != nil {
+		w.WriteHeader(500)
+		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		panic(err)
+		return
+	}
 	err = statement2.QueryRow().Scan(&id)
+	if err != nil {
+		w.WriteHeader(500)
+		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		panic(err)
+		return
+	}
 	w.WriteHeader(200)
-	fmt.Fprintf(w, "{\"user\" : \""+string(id)+"\"}")
+	fmt.Fprintf(w, "{\"user\" : \""+strconv.Itoa(id)+"\"}")
 	panic(err)
 	return
 }
