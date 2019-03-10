@@ -216,6 +216,7 @@
                     setErr("skola");
                     er = true;
                 }
+                return er;
             }
             clearErr(param);
             if (user.kluc.length != 4 && param == "kluc") {
@@ -236,6 +237,8 @@
 
         function sendForm(){
             if (testUser()) {
+                console.log("something");
+                
                 return
             }            
             var xhttp = new XMLHttpRequest();
