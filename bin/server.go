@@ -17,6 +17,7 @@ var r *mux.Router
 func main() {
 	fmt.Println("Hello server")
 	conf, err := config.ReadConfig()
+	fmt.Println(conf.Server.Port)
 	if err != nil {
 		fmt.Println("Failed to read config")
 		return
@@ -28,11 +29,11 @@ func main() {
 		return
 	}
 	r = mux.NewRouter()
-	r.HandleFunc("/register", notImplemented).Methods("post")
-	r.HandleFunc("/gettest", notImplemented).Methods("post")
-	r.HandleFunc("/starttest", notImplemented).Methods("post")
-	r.HandleFunc("/answer", notImplemented).Methods("post")
-	r.HandleFunc("/finishtest", notImplemented).Methods("post")
+	r.HandleFunc("/user", c.UserHandler).Methods("POST")
+	r.HandleFunc("/gettest", c.GetTest).Methods("POST")
+	r.HandleFunc("/ping", c.Ping).Methods("GET")
+	r.HandleFunc("/answer", notImplemented).Methods("POST")
+	r.HandleFunc("/finishtest", notImplemented).Methods("POST")
 	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "index.html")
 	})

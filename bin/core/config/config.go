@@ -4,15 +4,12 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"path/filepath"
 )
 
 //ReadConfig return structure of configuration
 func ReadConfig() (Config, error) {
 	out := Config{}
-	absPath, _ := filepath.Abs("config.json")
-	fmt.Println("Database Opening configuration File")
-	temFile, err := ioutil.ReadFile(absPath)
+	temFile, err := ioutil.ReadFile("config.json")
 	if err != nil {
 		fmt.Println("Reading Db config failed")
 		return out, err
@@ -37,7 +34,7 @@ func InitializeDb() (string, string, error) {
 	if conf.Database.Master.Active {
 		fmt.Println("Database Master status: active")
 	} else {
-		fmt.Println("Database Master status: INactive")
+		fmt.Println("Database Master status: INACTIVE")
 	}
 	if conf.Database.Slave.Active {
 		fmt.Println("LOG SLAVE status: active")
@@ -62,7 +59,6 @@ func isCorrectDB(dbIn db) bool {
 type Config struct {
 	Server   server   `json:"server,omitempty"`
 	Database database `json:"database,omitempty"`
-	Log      log      `json:"log,omitempty"`
 	Mailer   mail     `json:"mailer,omitempty"`
 }
 
@@ -86,7 +82,6 @@ type server struct {
 type database struct {
 	Master db `json:"master,omitempty"`
 	Slave  db `json:"slave,omitempty"`
-	Root   db `json:"root,omitempty"`
 }
 
 type db struct {
@@ -96,15 +91,4 @@ type db struct {
 	Port     string `json:"port,omitempty"`
 	Name     string `json:"name,omitempty"`
 	Address  string `json:"address,omitempty"`
-}
-
-type log struct {
-	Logging  bool     `json:"logging,omitempty"`
-	External external `json:"external,omitempty"`
-	Database database `json:"database,omitempty"`
-}
-
-type external struct {
-	Active  bool   `json:"active,omitempty"`
-	Address string `json:"address,omitempty"`
 }

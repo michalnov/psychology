@@ -129,7 +129,7 @@
     <script>
         function overlayOn() {
             document.getElementById("overlay").style.display = "block";
-            setTimeout(overlayOff,3000);
+            setTimeout(overlayOff,30000);
         }
         
         function overlayOff() {
@@ -138,9 +138,9 @@
     </script>
 
     <script>
-        let host = "itsovy.sk:1234";
+        let host = "http://itsovy.sk:1133";
         let ping = setInterval(pingMe,7700);
-        let test = null;
+        let test = {};
         let user = {};
         let userID = 0;
 
@@ -160,11 +160,16 @@
         function setErr(params) {
             document.getElementById("err"+params).style.backgroundColor = "red";
         }
-        function clearErr() {
-            document.getElementById("errvek").style.backgroundColor = "transparent";
-            document.getElementById("errskola").style.backgroundColor = "transparent";
-            document.getElementById("errrod").style.backgroundColor = "transparent";
-            document.getElementById("errkluc").style.backgroundColor = "transparent";
+        function clearErr(param) {
+            if (param == null || param == undefined || param == "") {
+                document.getElementById("errvek").style.backgroundColor = "transparent";
+                document.getElementById("errskola").style.backgroundColor = "transparent";
+                document.getElementById("errrod").style.backgroundColor = "transparent";
+                document.getElementById("errkluc").style.backgroundColor = "transparent";
+            } else {
+                document.getElementById(param).style.backgroundColor = "transparent";
+            }
+            
         }
         function pingMe() {
             var xhttp = new XMLHttpRequest();
@@ -184,17 +189,20 @@
             clearInterval(ping);
         }
 
-        stopPing();//just for testing
+        //stopPing();//just for testing
 
-        function testUser() {
-            clearErr();
-            user.kluc = document.getElementById("kluc").value.trim();
-            user.vek = document.getElementById("vek").value.trim();
-            user.rod = document.getElementById("rod").value.trim();
-            user.skola = document.getElementById("skola").value.trim();
-            console.log(user);
+        function testUser(param) {
             let er = false;
-            if (user.kluc.length != 4) {
+                user.kluc = document.getElementById("kluc").value.trim();
+                user.vek = document.getElementById("vek").value.trim();
+                user.rod = document.getElementById("rod").value.trim();
+                user.skola = document.getElementById("skola").value.trim();
+            if (param == null || param == undefined || param == "") {
+                clearErr();
+                
+            }
+            clearErr(param);
+            if (user.kluc.length != 4 &&) {
                 setErr("kluc");
                 er = true;
             }
@@ -220,6 +228,8 @@
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
+                    swap = JSON.parse(this.responseText)
+                    userID = swap.user
                     selectTest();
                 }
             };
@@ -255,7 +265,7 @@
             };
             xhttp.open("POST", host+"/gettest", true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send("{\"test\":\""+param+"\"}");
+            xhttp.send("{\"test\":\""+param+"\",\"userid\":\""+userID+"\"}");
             document.getElementById("selectTest").style.display = "none";
             document.getElementById("test").style.display = "block";
         }
