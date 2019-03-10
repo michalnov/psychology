@@ -23,6 +23,13 @@ func main() {
 		return
 	}
 	var c core.Core
+	master, slave, err := config.InitializeDb()
+	if err != nil {
+		fmt.Println("db init fail")
+		return
+	}
+	c.DbMaster = master
+	c.DbSlave = slave
 	err = c.LoadTests()
 	if err != nil {
 		fmt.Println("failed to load tests")
