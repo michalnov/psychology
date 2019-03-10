@@ -50,7 +50,7 @@ func (c *Core) UserHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	defer db.Close()
-	statement, err := db.Prepare("insert into user(age,gender,school,testkey) OUTPUT Inserted.ID values(?,?,?,?)")
+	statement, err := db.Prepare("insert into user(age,gender,school,testkey) values(?,?,?,?)")
 	if err != nil {
 		w.WriteHeader(500)
 		fmt.Fprintf(w, "{\"status\" : \"error\"}")
@@ -58,7 +58,9 @@ func (c *Core) UserHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	var id int
-	err = statement.QueryRow(req.Vek, req.Rod, req.Skola, req.Kluc).Scan(&id)
+	_ = statement.QueryRow(req.Vek, req.Rod, req.Skola, req.Kluc)
+	statement2, err := db.Prepare("SELECT LAST_INSERT_ID")
+	err = statement2.QueryRow().Scan(&id)
 	w.WriteHeader(200)
 	fmt.Fprintf(w, "{\"user\" : \""+string(id)+"\"}")
 	panic(err)
