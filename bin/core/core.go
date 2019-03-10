@@ -50,7 +50,7 @@ func (c *Core) UserHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	defer db.Close()
-	statement, err := db.Prepare("insert into user(age,gender,school,key) OUTPUT Inserted.ID values(?,?,?,?)")
+	statement, err := db.Prepare("insert into user(age,gender,school,testkey) OUTPUT Inserted.ID values(?,?,?,?)")
 	if err != nil {
 		w.WriteHeader(500)
 		fmt.Fprintf(w, "{\"status\" : \"error\"}")
