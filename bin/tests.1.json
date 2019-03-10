@@ -11,203 +11,203 @@
                     "answerid" : 101
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Vyberiem si podľa toho, v čom sa mi najviac darí a kde podávam najlepší výkon.",
                     "answerid" : 102
                 }
             ]
         },
         {
-            "text" : "question 2 text",
+            "text" : "Výborne, získal/a si dobré pracovné miesto. Na čo sa budeš ďalej sústrediť? ",
             "questionid" : 2,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Zameriam sa skôr na pracovné vzťahy s nadriadeným a kolegami.",
                     "answerid" : 201
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Zameriam sa skôr na podávanie čo najlepšieho výkonu.",
                     "answerid" : 202
                 }
             ]
         },
         {
-            "text" : "question 3 text",
+            "text" : "Vďaka tvojmu rozhodnutiu ťa povýšili na jednu z riadiacich pozícií a získal/a si vyšší plat. Aký bude tvoj prístup k podriadeným?",
             "questionid" : 3,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Môj prístup bude skôr zameraný na dobré vzťahy s možnosťou horšieho výkonu a rešpektu.",
                     "answerid" : 301
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Môj prístup bude skôr zameraný na výkon a rešpekt s možnosťou zlých vzťahov s podriadenými.",
                     "answerid" : 302
                 }
             ]
         },
         {
-            "text" : "question 4 text",
+            "text" : "Tvoj prístup spôsobil negatívne správanie podriadených a vedenie zvažuje či bolo tvoje povýšenie dobrým rozhodnutím. Čo budeš robiť ďalej?",
             "questionid" : 4,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
                     "answerid" : 401
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Pokúsim sa presadiť a dokázať, že si svoje miesto zaslúžim.",
                     "answerid" : 402
                 }
             ]
         },
         {
-            "text" : "question 5 text",
+            "text" : " Tvoje miesto, výkon aj vzťahy sú stabilné. ",
             "questionid" : 5,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Počkám, ako sa situácia vyvinie sama.",
                     "answerid" : 501
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Skúsim zariskovať na možný úkor svojho miesta ale s možnosťou vysokého postupu a zvýšenia platu.",
                     "answerid" : 502
                 }
             ]
         },
         {
-            "text" : "question 6 text",
+            "text" : "Dostal/a si sa do zlej situácie a musíš sa rozhodnúť, či ti znížia plat a budeš si môcť ponechať svoje miesto, alebo sa dostaneš na nižšie pracovné miesto ale ostane ti rovnaký plat.",
             "questionid" : 6,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Zvolím si nižší plat a nechám si miesto.",
                     "answerid" : 601
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Nechám si nezmenený plat a prejdem na nižšiu pracovnú pozíciu.",
                     "answerid" : 602
                 }
             ]
         },
         {
-            "text" : "question 7 text",
+            "text" : "Tvoja práca ťa vyčerpáva a musíš podávať veľmi veľa energie len aby si si ju udržal/a.",
             "questionid" : 7,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
                     "answerid" : 701
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Pokúsim sa zmeniť svoj prístup.",
                     "answerid" : 702
                 }
             ]
         },
         {
-            "text" : "question 8 text",
+            "text" : " Výborne, získal si vyššiu pracovnú pozíciu aj zvýšenie platu. Na čo sa budeš ďalej sústrediť?",
             "questionid" : 8,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Zameriam sa skôr na pracovné vzťahy s nadriadeným a kolegami.",
                     "answerid" : 801
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Zameriam sa skôr na podávanie čo najlepšieho výkonu.",
                     "answerid" : 802
                 }
             ]
         },
         {
-            "text" : "question 9 text",
+            "text" : "Všetko je v poriadku a darí sa ti. Ako budeš pokračovať?",
             "questionid" : 9,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Zameriam sa na plánovanie ďalšieho postupu.",
                     "answerid" : 901
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Budem sa sústrediť na aktuálne dianie v práci.",
                     "answerid" : 902
                 }
             ]
         },
         {
-            "text" : "question 10 text",
+            "text" : "Dostal si novú pracovnú ponuku. Pracovná pozícia je vyššia ako tá, ktorú si mal/a doteraz ale finančné ohodnotenie je nižšie ako to, ktoré máš teraz. Prijmeš túto novú ponuku?",
             "questionid" : 10,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Áno, vezmem.",
                     "answerid" : 1001
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Nie, nevezmem.",
                     "answerid" : 1002
                 }
             ]
         },
         {
-            "text" : "question 11 text",
+            "text" : "Urobil si niekoľko zlých rozhodnutí a to viedlo k tomu, že máš zlý vzťah z nadriadeným a kolegami.",
             "questionid" : 11,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Počkám, ako sa situácia vyvinie sama.",
                     "answerid" : 1101
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Pokúsim sa zmeniť svoj prístup.",
                     "answerid" : 1102
                 }
             ]
         },
         {
-            "text" : "question 12 text",
+            "text" : "Vďaka tvojmu rozhodnutiu opäť napreduješ. Ako budeš pokračovať?",
             "questionid" : 12,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Sústredím sa aby som robil svoju prácu najlepšie ako viem.",
                     "answerid" : 1201
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Pokračujem ako doteraz, ale robím aj prácu navyše. ",
                     "answerid" : 1202
                 }
             ]
         },
         {
-            "text" : "question 13 text",
+            "text" : "yskytli sa ti vážne zdravotné problémy. Ak budeš pokračovať rovnako v pracovnom výkone tak sa môže tvoj stav zhoršiť ale ak poľavíš môžeš prísť o svoje miesto.",
             "questionid" : 13,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Zariskujem zhoršenie stavu.",
                     "answerid" : 1301
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Zariskujem stratu miesta.",
                     "answerid" : 1302
                 }
             ]
         },
         {
-            "text" : "question 14 text",
+            "text" : "Bohužiaľ, sa to v tvojej práci veľmi zhoršilo a je to pre teba veľmi náročné.",
             "questionid" : 14,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Počkám, ako sa situácia vyvinie sama.",
                     "answerid" : 1401
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Poľavím a pokúsim sa si oddýchnuť.",
                     "answerid" : 1402
                 }
             ]
         },
         {
-            "text" : "question 15 text",
+            "text" : "Tvoje rozhodnutie spôsobilo ešte väčšie zhoršenie a tvoj nadriadený ti dal nižšiu pracovnú pozíciu.",
             "questionid" : 15,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Počkám, ako sa situácia vyvinie sama.",
                     "answerid" : 1501
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
                     "answerid" : 1502
                 }
             ]
