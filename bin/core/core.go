@@ -75,7 +75,23 @@ func (c *Core) GetTest(w http.ResponseWriter, r *http.Request) {
 			resp, err := json.MarshalIndent(test, "  ", "    ")
 			if err != nil {
 				w.WriteHeader(500)
-				fmt.Fprintf(w, "{\"status\" : \"error\"}")
+				fmt.Fprintf(w, "{\"status\" : \"marshal error\"}")
+			}
+			db, err := sql.Open("mysql", c.DbMaster)
+			if err != nil {
+				w.WriteHeader(300)
+				fmt.Fprintf(w, "{\"status\" : \"mysql error\"}")
+			}
+			defer db.Close()
+			statement, err := db.Prepare("update user set testid = ? where iduser = ?")
+			if err != nil {
+				w.WriteHeader(500)
+				fmt.Fprintf(w, "{\"status\" : \"sql error\"}")
+			}
+			_, err = statement.Exec(test.TestID, req.UserID)
+			if err != nil {
+				w.WriteHeader(500)
+				fmt.Fprintf(w, "{\"status\" : \"sql 2 error\"}")
 			}
 			w.WriteHeader(200)
 			fmt.Fprintf(w, string(resp))
