@@ -60,7 +60,7 @@ func (c *Core) UserHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	var id int
 	_ = statement.QueryRow(req.Vek, req.Rod, req.Skola, req.Kluc)
-	statement2, err := db.Prepare("SELECT LAST_INSERT_ID")
+	statement2, err := db.Prepare("SELECT LAST_INSERT_ID()")
 	if err != nil {
 		w.WriteHeader(500)
 		fmt.Fprintf(w, "{\"status\" : \"error\"}")
