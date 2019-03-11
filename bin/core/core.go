@@ -60,15 +60,14 @@ func (c *Core) UserHandler(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "{\"status\" : \"error\"}")
 		return
 	}
-	var id int
-	_ = statement.QueryRow(req.Vek, req.Rod, req.Skola, req.Kluc)
 	statement2, err := db.Prepare("SELECT LAST_INSERT_ID()")
 	if err != nil {
 		w.WriteHeader(500)
 		fmt.Fprintf(w, "{\"status\" : \"error\"}")
 		return
 	}
-	err = statement2.QueryRow().Scan(&id)
+	res, err := statement.Exec(req.Vek, req.Rod, req.Skola, req.Kluc)
+	id, err := strconv.ParseInt(res.LastInsertId(), 10, 64)
 	if err != nil {
 		w.WriteHeader(500)
 		fmt.Fprintf(w, "{\"status\" : \"error\"}")
