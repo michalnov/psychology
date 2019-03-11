@@ -286,20 +286,20 @@ func (c *Core) Finishtest(w http.ResponseWriter, r *http.Request) {
 }
 
 func (c *Core) mmail(abc tomail) {
-	text := "kluc : " + abc.User.Kluc + "\n"
-	text = text + "vek : " + abc.User.Vek + "\n"
-	text = text + "skola : " + abc.User.Skola + "\n"
-	text = text + "rod : " + abc.User.Rod + "\n\n"
-	text = text + "gas 1  : " + strconv.Itoa(abc.Gas.Gas1) + "/n"
-	text = text + "gas 2 : " + strconv.Itoa(abc.Gas.Gas2) + "/n"
-	text = text + "gas 3 : " + strconv.Itoa(abc.Gas.Gas3) + "/n"
-	text = text + "gas 4 : " + strconv.Itoa(abc.Gas.Gas4) + "/n"
-	text = text + "gas 5 : " + strconv.Itoa(abc.Gas.Gas5) + "/n"
-	text = text + "gas 6 : " + strconv.Itoa(abc.Gas.Gas6) + "/n"
-	text = text + "gas 7 : " + strconv.Itoa(abc.Gas.Gas7) + "/n"
-	text = text + "gas 8 : " + strconv.Itoa(abc.Gas.Gas8) + "/n"
-	text = text + "gas 9 : " + strconv.Itoa(abc.Gas.Gas9) + "/n"
-	text = text + "gas 10 : " + strconv.Itoa(abc.Gas.Gas10) + "/n"
+	text := "kluc : " + abc.User.Kluc + "  \n"
+	text = text + "vek : " + abc.User.Vek + "  \n"
+	text = text + "skola : " + abc.User.Skola + "  \n"
+	text = text + "rod : " + abc.User.Rod + "  \n\n"
+	text = text + "gas 1  : " + strconv.Itoa(abc.Gas.Gas1) + "  \n"
+	text = text + "gas 2 : " + strconv.Itoa(abc.Gas.Gas2) + "  \n"
+	text = text + "gas 3 : " + strconv.Itoa(abc.Gas.Gas3) + "  \n"
+	text = text + "gas 4 : " + strconv.Itoa(abc.Gas.Gas4) + "  \n"
+	text = text + "gas 5 : " + strconv.Itoa(abc.Gas.Gas5) + "  \n"
+	text = text + "gas 6 : " + strconv.Itoa(abc.Gas.Gas6) + "  \n"
+	text = text + "gas 7 : " + strconv.Itoa(abc.Gas.Gas7) + "  \n"
+	text = text + "gas 8 : " + strconv.Itoa(abc.Gas.Gas8) + "  \n"
+	text = text + "gas 9 : " + strconv.Itoa(abc.Gas.Gas9) + "  \n"
+	text = text + "gas 10 : " + strconv.Itoa(abc.Gas.Gas10) + "  \n"
 	m := gomail.NewMessage()
 	m.SetHeader("From", "michal.novotny@akademiasovy.sk")
 	m.SetHeader("To", "ester.nosalova@gmail.com")

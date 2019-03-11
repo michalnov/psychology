@@ -526,6 +526,7 @@ let temptest;
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     document.getElementById("gasscale").style.display = "none";
+                    eend();
                     overlayOn2();
                 } else if (this.readyState == 4) {
                     console.log("gas failed");
@@ -533,6 +534,38 @@ let temptest;
             
             };
             xhttp.open("POST", host+"/gas", true);
+            xhttp.setRequestHeader("Content-type", "application/json");
+            xhttp.send(JSON.stringify(req));
+        }
+
+        function eend() {
+            req = {
+                user : user,
+                gas : {
+                    userid : Number.parseInt(userID),
+                    gas1 : Number.parseInt(document.getElementById("gas1").value),
+                    gas2 : Number.parseInt(document.getElementById("gas2").value),
+                    gas3 : Number.parseInt(document.getElementById("gas3").value),
+                    gas4 : Number.parseInt(document.getElementById("gas4").value),
+                    gas5 : Number.parseInt(document.getElementById("gas5").value),
+                    gas6 : Number.parseInt(document.getElementById("gas6").value),
+                    gas7 : Number.parseInt(document.getElementById("gas7").value),
+                    gas8 : Number.parseInt(document.getElementById("gas8").value),
+                    gas9 : Number.parseInt(document.getElementById("gas9").value),
+                    gas10 : Number.parseInt(document.getElementById("gas10").value)
+                }
+            }
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    
+                    
+                } else if (this.readyState == 4) {
+                    console.log("gas failed");
+                }
+            
+            };
+            xhttp.open("POST", host+"/finishtest", true);
             xhttp.setRequestHeader("Content-type", "application/json");
             xhttp.send(JSON.stringify(req));
         }
