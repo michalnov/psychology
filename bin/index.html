@@ -40,6 +40,19 @@
             z-index: 2;
             cursor: pointer;
         }
+        #overlay2 {
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 2;
+            cursor: pointer;
+        }
 
         #text{
             position: absolute;
@@ -69,6 +82,9 @@
 <body>
     <div id="overlay">
         <div id="text">najprv poziadaj o test <br>a vypln ho</div>
+    </div>
+    <div id="overlay2">
+        <div id="text">Ďakujem :)</div>
     </div>
     <div class="container">
         <div class="row" id="about">
@@ -241,6 +257,10 @@
         function overlayOn() {
             document.getElementById("overlay").style.display = "block";
             setTimeout(overlayOff,30000);
+        }
+
+        function overlayOn2() {
+            document.getElementById("overlay2").style.display = "block";
         }
         
         function overlayOff() {
@@ -505,10 +525,8 @@ let temptest;
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    setTimeout(function () {
-                       block = false; 
-                    },1500);
-                    loadque();
+                    document.getElementById("gasscale").style.display = "none";
+                    overlayOn2();
                 } else if (this.readyState == 4) {
                     console.log("gas failed");
                 }
