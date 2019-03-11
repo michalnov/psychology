@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"strconv"
 
 	"github.com/michalnov/psychology/bin/core/structures"
 
@@ -39,22 +40,44 @@ func (c *Core) UserHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		w.WriteHeader(300)
 		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		panic(err)
+		return
 	}
 	db, err := sql.Open("mysql", c.DbMaster)
 	if err != nil {
 		w.WriteHeader(300)
 		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		panic(err)
+		return
 	}
 	defer db.Close()
-	statement, err := db.Prepare("insert into user(age,gender,school,key) OUTPUT Inserted.ID values(?,?,?,?)")
+	statement, err := db.Prepare("insert into user(age,gender,school,testkey) values(?,?,?,?)")
 	if err != nil {
 		w.WriteHeader(500)
 		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		panic(err)
+		return
 	}
 	var id int
-	err = statement.QueryRow(req.Vek, req.Rod, req.Skola, req.Kluc).Scan(&id)
+	_ = statement.QueryRow(req.Vek, req.Rod, req.Skola, req.Kluc)
+	statement2, err := db.Prepare("SELECT LAST_INSERT_ID()")
+	if err != nil {
+		w.WriteHeader(500)
+		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		panic(err)
+		return
+	}
+	err = statement2.QueryRow().Scan(&id)
+	if err != nil {
+		w.WriteHeader(500)
+		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		panic(err)
+		return
+	}
 	w.WriteHeader(200)
-	fmt.Fprintf(w, "{\"user\" : \""+string(id)+"\"}")
+	fmt.Fprintf(w, "{\"user\" : \""+strconv.Itoa(id)+"\"}")
+	panic(err)
+	return
 }
 
 type getTest struct {
@@ -69,13 +92,39 @@ func (c *Core) GetTest(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		w.WriteHeader(300)
 		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		panic(err)
+		return
 	}
 	for _, test := range c.Tests {
 		if test.Key == req.Test {
 			resp, err := json.MarshalIndent(test, "  ", "    ")
 			if err != nil {
 				w.WriteHeader(500)
-				fmt.Fprintf(w, "{\"status\" : \"error\"}")
+				fmt.Fprintf(w, "{\"status\" : \"marshal error\"}")
+				panic(err)
+				return
+			}
+			db, err := sql.Open("mysql", c.DbMaster)
+			if err != nil {
+				w.WriteHeader(300)
+				fmt.Fprintf(w, "{\"status\" : \"mysql error\"}")
+				panic(err)
+				return
+			}
+			defer db.Close()
+			statement, err := db.Prepare("update user set testid = ? where iduser = ?")
+			if err != nil {
+				w.WriteHeader(500)
+				fmt.Fprintf(w, "{\"status\" : \"sql error\"}")
+				panic(err)
+				return
+			}
+			_, err = statement.Exec(test.TestID, req.UserID)
+			if err != nil {
+				w.WriteHeader(500)
+				fmt.Fprintf(w, "{\"status\" : \"sql 2 error\"}")
+				panic(err)
+				return
 			}
 			w.WriteHeader(200)
 			fmt.Fprintf(w, string(resp))
@@ -83,6 +132,8 @@ func (c *Core) GetTest(w http.ResponseWriter, r *http.Request) {
 	}
 	w.WriteHeader(500)
 	fmt.Fprintf(w, "{\"status\" : \"error\"}")
+	panic(err)
+	return
 
 }
 

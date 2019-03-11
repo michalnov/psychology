@@ -4,214 +4,285 @@
     "description" : "some text",
     "que" : [
         {
-            "text" : "question text",
+            "text" : "Na základe čoho si vyberieš svojho/svoju partnera/ku",
             "questionid" : 1,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Vyberiem si predovšetkým na základe priateľstva.",
                     "answerid" : 101
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Vyberiem si predovšetkým na yáklade priťažlivosti.",
                     "answerid" : 102
                 }
             ]
         },
         {
-            "text" : "question 2 text",
+            "text" : "Výborne, získal/a si skvelého/skvelú partnera/ku. Na čo sa budeš ďalej sústrediť?",
             "questionid" : 2,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Zameriam sa skôr na rozvíjanie nášho vzťahu.",
                     "answerid" : 201
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Zameriam sa skôr na zabezpečenie rodiny.",
                     "answerid" : 202
                 }
             ]
         },
         {
-            "text" : "question 3 text",
+            "text" : "Vďaka tvojmu rozhodnutiu si si zlepšil/a svoj vzťah a tvoja rodina sa rozrástla. Aký bude tvoj prístup k členom rodiny?",
             "questionid" : 3,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Môj prístup bude zameraný skôr na vzťah s dieťaťom s možnosťou zhoršenia vzťahu s partnerom/kou.",
                     "answerid" : 301
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Môj prístup bude zameraný skôr na vzťah s partnerom/kou s možnosťou zhoršenia vzťahu s dieťaťom.",
                     "answerid" : 302
                 }
             ]
         },
         {
-            "text" : "question 4 text",
+            "text" : "Tvoj prístup spôsobil negatívne správanie dieťaťa a tvoj/a parner/ka zvažuje či bolo rozšírenie rodiny dobrým rozhodnutím. Čo budeš robiť ďalej?",
             "questionid" : 4,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
                     "answerid" : 401
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Pokúsim sa presadiť a situáciu zlepšiť.",
                     "answerid" : 402
                 }
             ]
         },
         {
-            "text" : "question 5 text",
+            "text" : "Vďaka tvojmu prístupu sa vzťahy aj situácia v rodine stabilizovala.",
             "questionid" : 5,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Počkám, ako sa situácia vyvinie sama.",
                     "answerid" : 501
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Skúsim zariskovať na možný úkor svojej rodiny ale s možnosťou veľkého zlepšenia vzťahov a zabezpečenia.",
                     "answerid" : 502
                 }
             ]
         },
         {
-            "text" : "question 6 text",
+            "text" : "Dostal/a si sa do zlej situácie a musíš sa rozhodnúť, či udržíš vzťah s partnerom/kou a zhoršíš si vzťah s dieťaťom alebo si udržíš vzťah s dieťaťom a zhoršíš si vzťah s deťmi.",
             "questionid" : 6,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Udržím si vzťah s partnerom/kou a zhorším ten s dieťaťom.",
                     "answerid" : 601
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Udržím si vzťah s dieťaťom a zhorším ten s partmerom/kou.",
                     "answerid" : 602
                 }
             ]
         },
         {
-            "text" : "question 7 text",
+            "text" : "Tvoja rodina a rodinný život ťa vyčerpáva a musíš podávať veľa energie aby si si ju udržal/a.",
             "questionid" : 7,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
                     "answerid" : 701
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Pokúsim sa zmeniť svoj prístup.",
                     "answerid" : 702
                 }
             ]
         },
         {
-            "text" : "question 8 text",
+            "text" : "Výborne, zlepšil si si rodinnú situáciu ako aj vzťahy. Na čo sa budeš ďalej sústrediť?",
             "questionid" : 8,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Zameriam sa skôr na rozvíjanie nášho vzťahu.",
                     "answerid" : 801
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Zameriam sa skôr na zabezpečenie rodiny.",
                     "answerid" : 802
                 }
             ]
         },
         {
-            "text" : "question 9 text",
+            "text" : "Všetko je v poriadku a darí sa ti. Ako budeš pokračovať?",
             "questionid" : 9,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Zameriam sa na plánovanie spoločnej budúcnosti.",
                     "answerid" : 901
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Budem sa sústrediť na to, čo sa aktuálne deje v naších životoch.",
                     "answerid" : 902
                 }
             ]
         },
         {
-            "text" : "question 10 text",
+            "text" : "Máš možnosť opäť rozšíriť svoju rodinu. Posunieš sa ďalej v dosahovaní svojho cieľa ale na úkor zabezpečenia rodiny. ",
             "questionid" : 10,
             "ans" : [
                 {
-                    "text" : "ans 1 text",
+                    "text" : "Áno, urobím to.",
                     "answerid" : 1001
                 },
                 {
-                    "text" : "ans 2 text",
+                    "text" : "Nie, neurobím to.",
                     "answerid" : 1002
                 }
             ]
         },
         {
-            "text" : "question 11 text",
-            "questionid" : 11,
-            "ans" : [
-                {
-                    "text" : "ans 1 text",
-                    "answerid" : 1101
-                },
-                {
-                    "text" : "ans 2 text",
-                    "answerid" : 1102
-                }
+
+            "text": "Urobil si niekoľko zlých rozhodnutí a to viedlo k tomu, že máš zlý vzťah s partnerom/kou ako aj deťmi.",
+      
+            "questionid": 11,
+      
+            "ans": [
+      
+              {
+      
+                "text": "Počkám, ako sa situácia vyvinie sama.",
+      
+                "answerid": 1101
+      
+              },
+      
+              {
+      
+                "text": "Pokúsim sa zmeniť svoj prístup.",
+      
+                "answerid": 1102
+      
+              }
+      
             ]
-        },
-        {
-            "text" : "question 12 text",
-            "questionid" : 12,
-            "ans" : [
-                {
-                    "text" : "ans 1 text",
-                    "answerid" : 1201
-                },
-                {
-                    "text" : "ans 2 text",
-                    "answerid" : 1202
-                }
+      
+          },
+      
+          {
+      
+            "text": "Vďaka tvjmu rozhodnutiu je opäť všetko v poriadku. Ako budeš pokračovať?",
+      
+            "questionid": 12,
+      
+            "ans": [
+      
+              {
+      
+                "text": "Sústredím sa na svoju rodinu najlepšie ako viem.",
+      
+                "answerid": 1201
+      
+              },
+      
+              {
+      
+                "text": "Pokračujem ako doteraz ale robím veci navyše. ",
+      
+                "answerid": 1202
+      
+              }
+      
             ]
-        },
-        {
-            "text" : "question 13 text",
-            "questionid" : 13,
-            "ans" : [
-                {
-                    "text" : "ans 1 text",
-                    "answerid" : 1301
-                },
-                {
-                    "text" : "ans 2 text",
-                    "answerid" : 1302
-                }
+      
+          },
+      
+          {
+      
+            "text": "Vyskytli sa ti vážne zdravotné problémy. Ak budeš pokračovať rovnako vo svojom rodinnom výkone môže sa tvoj stav zhoršiť, ale ak poľavíš môže to narušiť chod celej rodiny.",
+      
+            "questionid": 13,
+      
+            "ans": [
+      
+              {
+      
+                "text": "Zariskujem zhoršenie zdravotného stavu.",
+      
+                "answerid": 1301
+      
+              },
+      
+              {
+      
+                "text": "Zariskujem narušenie chodu cele rodiny.",
+      
+                "answerid": 1302
+      
+              }
+      
             ]
-        },
-        {
-            "text" : "question 14 text",
-            "questionid" : 14,
-            "ans" : [
-                {
-                    "text" : "ans 1 text",
-                    "answerid" : 1401
-                },
-                {
-                    "text" : "ans 2 text",
-                    "answerid" : 1402
-                }
+      
+          },
+      
+          {
+      
+            "text": "Bohužial, sa to v tvojej rodine veľmi zhoršilo a je to pre teba veľmi náročné.",
+      
+            "questionid": 14,
+      
+            "ans": [
+      
+              {
+      
+                "text": "Počkám, ako sa situácia vyvinie sama.",
+      
+                "answerid": 1401
+      
+              },
+      
+              {
+      
+                "text": "Poľavím a pokúsim sa si oddýchnuť.",
+      
+                "answerid": 1402
+      
+              }
+      
             ]
-        },
-        {
-            "text" : "question 15 text",
-            "questionid" : 15,
-            "ans" : [
-                {
-                    "text" : "ans 1 text",
-                    "answerid" : 1501
-                },
-                {
-                    "text" : "ans 2 text",
-                    "answerid" : 1502
-                }
+      
+          },
+      
+          {
+      
+            "text": "Tvoje rozhodnutie spôsobilo ešte väčšie zhoršenie a tvoj/apartner/ka zvažuje, že ťa opustí.",
+      
+            "questionid": 15,
+      
+            "ans": [
+      
+              {
+      
+                "text": "Počkám, ako sa situácia vyvinie sama.",
+      
+                "answerid": 1501
+      
+              },
+      
+              {
+      
+                "text": "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
+      
+                "answerid": 1502
+      
+              }
+      
             ]
-        }
-    ]
-}
+      
+          }
+      
+        ]
+      
+      }

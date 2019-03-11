@@ -23,6 +23,13 @@ func main() {
 		return
 	}
 	var c core.Core
+	master, slave, err := config.InitializeDb()
+	if err != nil {
+		fmt.Println("db init fail")
+		return
+	}
+	c.DbMaster = master
+	c.DbSlave = slave
 	err = c.LoadTests()
 	if err != nil {
 		fmt.Println("failed to load tests")
@@ -33,6 +40,7 @@ func main() {
 	r.HandleFunc("/gettest", c.GetTest).Methods("POST")
 	r.HandleFunc("/ping", c.Ping).Methods("GET")
 	r.HandleFunc("/answer", notImplemented).Methods("POST")
+	r.HandleFunc("/finishtest", notImplemented).Methods("POST")
 	r.HandleFunc("/finishtest", notImplemented).Methods("POST")
 	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "index.html")

@@ -70,19 +70,19 @@
                     <table id="headform" style="width:85%; margin:auto; margin-top: 5%;">
                         <tr>
                             <td><h4>Kluc</h4></td>
-                            <td><input type="text" style="border-radius:7px" id="kluc" onchange="testUser()"><span class="dotErr" name="dotErr" id="errkluc"></span></td>
+                            <td><input type="text" style="border-radius:7px" id="kluc" onchange="testUser('kluc')"><span class="dotErr" name="dotErr" id="errkluc"></span></td>
                         </tr>
                         <tr>
                             <td><h4>Vek</h4></td>
-                            <td><input type="text" style="border-radius:7px" id="vek" onchange="testUser()"><span class="dotErr" name="dotErr" id="errvek"></span></td>
+                            <td><input type="text" style="border-radius:7px" id="vek" onchange="testUser('vek')"><span class="dotErr" name="dotErr" id="errvek"></span></td>
                         </tr>
                         <tr>
                             <td><h4>Rod</h4></td>
-                            <td><input type="text" style="border-radius:7px" id="rod" onchange="testUser()"><span class="dotErr" name="dotErr" id="errrod"></span></td>
+                            <td><input type="text" style="border-radius:7px" id="rod" onchange="testUser('rod')"><span class="dotErr" name="dotErr" id="errrod"></span></td>
                         </tr>
                         <tr>
                             <td><h4>Škola  </h4></td>
-                            <td><input type="text" style="border-radius:7px" id="skola" onchange="testUser()"><span class="dotErr" name="dotErr" id="errskola"></span></td>
+                            <td><input type="text" style="border-radius:7px" id="skola" onchange="testUser('skola')"><span class="dotErr" name="dotErr" id="errskola"></span></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -167,7 +167,7 @@
                 document.getElementById("errrod").style.backgroundColor = "transparent";
                 document.getElementById("errkluc").style.backgroundColor = "transparent";
             } else {
-                document.getElementById(param).style.backgroundColor = "transparent";
+                document.getElementById("err"+param).style.backgroundColor = "transparent";
             }
             
         }
@@ -189,6 +189,7 @@
             clearInterval(ping);
         }
 
+        pingMe();
         //stopPing();//just for testing
 
         function testUser(param) {
@@ -197,24 +198,37 @@
                 user.vek = document.getElementById("vek").value.trim();
                 user.rod = document.getElementById("rod").value.trim();
                 user.skola = document.getElementById("skola").value.trim();
-            if (param == null || param == undefined || param == "") {
+            if (param == null || param == undefined) {
                 clearErr();
-                
+                if (user.kluc.length != 4) {
+                    setErr("kluc");
+                    er = true;
+                }
+                if (user.vek.length != 2) {
+                    setErr("vek");
+                    er = true;
+                }
+                if (user.rod.length <= 2) {
+                    setErr("rod");
+                    er = true;
+                }
+                if (user.skola.length <= 3) {
+                    setErr("skola");
+                    er = true;
+                }
+                return er;
             }
             clearErr(param);
-            if (user.kluc.length != 4 &&) {
+            if (user.kluc.length != 4 && param == "kluc") {
                 setErr("kluc");
                 er = true;
-            }
-            if (user.vek.length != 2) {
+            } else if (user.vek.length != 2 && param == "vek") {
                 setErr("vek");
                 er = true;
-            }
-            if (user.rod.length <= 2) {
+            } else if (user.rod.length <= 2 && param == "rod") {
                 setErr("rod");
                 er = true;
-            }
-            if (user.skola.length <= 3) {
+            } else if (user.skola.length <= 3 && param == "skola") {
                 setErr("skola");
                 er = true;
             }
@@ -223,6 +237,8 @@
 
         function sendForm(){
             if (testUser()) {
+                console.log("something");
+                
                 return
             }            
             var xhttp = new XMLHttpRequest();

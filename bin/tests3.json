@@ -2,216 +2,218 @@
     "testid" : 3344,
     "testkey" : "vztah",
     "description" : "some text",
-    "que" : [
+    "que": [
         {
-            "text" : "question text",
-            "questionid" : 1,
-            "ans" : [
-                {
-                    "text" : "ans 1 text",
-                    "answerid" : 101
-                },
-                {
-                    "text" : "ans 2 text",
-                    "answerid" : 102
-                }
-            ]
+        "text": "Na základe čoho si vyberieš svoje zážitky?",
+        "questionid": 1,
+        "ans": [
+            {
+            "text": "Vyberiem si podľa toho, ktoré budú poskytovať čo najviac adrenalínu.",
+            "answerid": 101
+            },
+            {
+            "text": "Vyberiem si podľa toho, ktoré budú čo najviac kultúrne zamerané.",
+            "answerid": 102
+            }
+        ]
         },
         {
-            "text" : "question 2 text",
-            "questionid" : 2,
-            "ans" : [
-                {
-                    "text" : "ans 1 text",
-                    "answerid" : 201
-                },
-                {
-                    "text" : "ans 2 text",
-                    "answerid" : 202
-                }
-            ]
+        "text": "Výborne, vybral si si skvelé zameranie. Na čo sa budeš ďalej sústrediť?",
+        "questionid": 2,
+        "ans": [
+            {
+            "text": "Zameriam sa skôr na užívanie si osamote.",
+            "answerid": 201
+            },
+            {
+            "text": "Zameriam sa skôr na užívanie si s priateľmi.",
+            "answerid": 202
+            }
+        ]
         },
         {
-            "text" : "question 3 text",
-            "questionid" : 3,
-            "ans" : [
-                {
-                    "text" : "ans 1 text",
-                    "answerid" : 301
-                },
-                {
-                    "text" : "ans 2 text",
-                    "answerid" : 302
-                }
-            ]
+        "text": "Vďaka tvojmu rozhodnutiu si sa veľmi dobre zabavil. Aký bude tvoj ďalší prístup?",
+        "questionid": 3,
+        "ans": [
+            {
+            "text": "Môj prístup bude skôr zameraný na veľa cestovania s možnosťou menšieho počtu zážitkov.",
+            "answerid": 301
+            },
+            {
+            "text": "Môj prístup bude skôr zameraný na prežívania čo najviac zážitkov na úkor cestovania a spoznávania.",
+            "answerid": 302
+            }
+        ]
         },
         {
-            "text" : "question 4 text",
-            "questionid" : 4,
-            "ans" : [
-                {
-                    "text" : "ans 1 text",
-                    "answerid" : 401
-                },
-                {
-                    "text" : "ans 2 text",
-                    "answerid" : 402
-                }
-            ]
+        "text": "Tvoj prístup spôsobil finančné problémy a ty si nútený prehodnotiť svoje rozhodnutia. Čo budeš robiť ďalej?",
+        "questionid": 4,
+        "ans": [
+            {
+            "text": "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
+            "answerid": 401
+            },
+            {
+            "text": "Pokúsim sa si zarobiť a presvedčiť sa, že som si vybral správne.",
+            "answerid": 402
+            }
+        ]
         },
         {
-            "text" : "question 5 text",
-            "questionid" : 5,
-            "ans" : [
-                {
-                    "text" : "ans 1 text",
-                    "answerid" : 501
-                },
-                {
-                    "text" : "ans 2 text",
-                    "answerid" : 502
-                }
-            ]
+        "text": "Tvoja finančná situácia sa stabilizovala ako aj prežívanie zážitkov a cestovanie.",
+        "questionid": 5,
+        "ans": [
+            {
+            "text": "Počkám, ako sa situácia vyvinie sama.",
+            "answerid": 501
+            },
+            {
+            "text": "Skúsim zariskovať na možný úkorväčšieho množstva peňazí ale s možnosťou prežiť niečo nezabudnuteľné.",
+            "answerid": 502
+            }
+        ]
         },
         {
-            "text" : "question 6 text",
-            "questionid" : 6,
-            "ans" : [
-                {
-                    "text" : "ans 1 text",
-                    "answerid" : 601
-                },
-                {
-                    "text" : "ans 2 text",
-                    "answerid" : 602
-                }
-            ]
+        "text": "Dostal/a si sa do zlej situácie kedy sa musíš rozhodnúť či radšej budeš viac pracovať a mať menej dobrých zážitkov, alebo budeš menej pracovať a mať viacej horších zážitkov. ",
+        "questionid": 6,
+        "ans": [
+            {
+            "text": "Zvolím si viacej horších zážitkov.",
+            "answerid": 601
+            },
+            {
+            "text": "Zvolím si menej dobrých zážitkov.",
+            "answerid": 602
+            }
+        ]
         },
         {
-            "text" : "question 7 text",
-            "questionid" : 7,
-            "ans" : [
-                {
-                    "text" : "ans 1 text",
-                    "answerid" : 701
-                },
-                {
-                    "text" : "ans 2 text",
-                    "answerid" : 702
-                }
-            ]
+        "text": "Si sklamaný a vyčerpaný a musíš podávať veľa energie aby si si udržal aktuálny životný štýl.",
+        "questionid": 7,
+        "ans": [
+            {
+            "text": "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
+            "answerid": 701
+            },
+            {
+            "text": "Pokúsim sa zmeniť svoj prístup.",
+            "answerid": 702
+            }
+        ]
         },
         {
-            "text" : "question 8 text",
-            "questionid" : 8,
-            "ans" : [
-                {
-                    "text" : "ans 1 text",
-                    "answerid" : 801
-                },
-                {
-                    "text" : "ans 2 text",
-                    "answerid" : 802
-                }
-            ]
+        "text": "Výborne máš dostatok peňazí a vyskytli sa ti nové možnosti.",
+        "questionid": 8,
+        "ans": [
+            {
+            "text": "Zameriam sa na uživanie si osamote.",
+            "answerid": 801
+            },
+            {
+            "text": "Zameriam sa na užívanie si s priateľmi.",
+            "answerid": 802
+            }
+        ]
         },
         {
-            "text" : "question 9 text",
-            "questionid" : 9,
-            "ans" : [
-                {
-                    "text" : "ans 1 text",
-                    "answerid" : 901
-                },
-                {
-                    "text" : "ans 2 text",
-                    "answerid" : 902
-                }
-            ]
+        "text": "Všetko je v poriadku a darí sa ti. Ako budeš pokračovať?",
+        "questionid": 9,
+        "ans": [
+            {
+            "text": "Zameriam sa na plánovanie a zisťovanie ďalších možností.",
+            "answerid": 901
+            },
+            {
+            "text": "Pokúsim sa žiť pre daný okamih.",
+            "answerid": 902
+            }
+        ]
         },
         {
-            "text" : "question 10 text",
-            "questionid" : 10,
-            "ans" : [
-                {
-                    "text" : "ans 1 text",
-                    "answerid" : 1001
-                },
-                {
-                    "text" : "ans 2 text",
-                    "answerid" : 1002
-                }
-            ]
+        "text": "Dostal si veľmi špeciálnu možnosť ísť na veľmi výnimočné miesto ale ak sa rozhodneš ísť potom dlhšiu dobu nebudeš môcť nikam ísť. Využiješ túto možnosť?",
+        "questionid": 10,
+        "ans": [
+            {
+            "text": "Áno, využijem.",
+            "answerid": 1001
+            },
+            {
+            "text": "Nie, nevyužijem.",
+            "answerid": 1002
+            }
+        ]
         },
         {
-            "text" : "question 11 text",
-            "questionid" : 11,
-            "ans" : [
-                {
-                    "text" : "ans 1 text",
-                    "answerid" : 1101
-                },
-                {
-                    "text" : "ans 2 text",
-                    "answerid" : 1102
-                }
-            ]
+        "text": "Urobil si nieko+lko zl7ch rozhodnutí, ktoré ti pokazili zážitky a dochádzajú ti penaize.",
+        "questionid": 11,
+        "ans": [
+            {
+            "text": "Počkám, ako sa situácia vyvinie sama.",
+            "answerid": 1101
+            },
+            {
+            "text": "Pokúsim sa zmeniť svoj prístup.",
+            "answerid": 1102
+            }
+        ]
         },
         {
-            "text" : "question 12 text",
-            "questionid" : 12,
-            "ans" : [
-                {
-                    "text" : "ans 1 text",
-                    "answerid" : 1201
-                },
-                {
-                    "text" : "ans 2 text",
-                    "answerid" : 1202
-                }
-            ]
+        "text": "Vďaka tvojmu rozhodnutiu si opäť užívaš. Ako budeš pokračovať?",
+        "questionid": 12,
+        "ans": [
+            {
+            "text": "Sústredím sa čo najviac na zážitky, ktoré prežívam.",
+            "answerid": 1201
+            },
+            {
+            "text": "Skúšam vyhľadávať a objavovať viac ako zvyčajne.",
+            "answerid": 1202
+            }
+        ]
         },
         {
-            "text" : "question 13 text",
-            "questionid" : 13,
-            "ans" : [
-                {
-                    "text" : "ans 1 text",
-                    "answerid" : 1301
-                },
-                {
-                    "text" : "ans 2 text",
-                    "answerid" : 1302
-                }
-            ]
+        "text": "Vyskytli sa ti vážne zdravotné problémy. Ak budeš pokračovať rovnako tak sa ti môže zhoršiť zdravotný stav ale ak poľavíš môžeš prísť o veľa úžasných zážitkov.",
+        "questionid": 13,
+        "ans": [
+            {
+            "text": "Zariskujem zhoršenie stavu.",
+            "answerid": 1301
+            },
+            {
+            "text": "Zariskujem stratu zážitkov.",
+            "answerid": 1302
+            }
+        ]
         },
         {
-            "text" : "question 14 text",
-            "questionid" : 14,
-            "ans" : [
-                {
-                    "text" : "ans 1 text",
-                    "answerid" : 1401
-                },
-                {
-                    "text" : "ans 2 text",
-                    "answerid" : 1402
-                }
-            ]
+        "text": "Bohužiaľ sa to v tvojom živote veľmi zhoršilo a máš to veľmi ťažké.",
+        "questionid": 14,
+        "ans": [
+            {
+            "text": "Počkám, ako sa situácia vyvinie sama.",
+            "answerid": 1401
+            },
+            {
+            "text": "Poľavím a pokúsim sa si oddýchnuť.",
+            "answerid": 1402
+            }
+        ]
         },
         {
-            "text" : "question 15 text",
-            "questionid" : 15,
-            "ans" : [
-                {
-                    "text" : "ans 1 text",
-                    "answerid" : 1501
-                },
-                {
-                    "text" : "ans 2 text",
-                    "answerid" : 1502
-                }
-            ]
+        "text": "Tvoje rozhodnutie spôsobilo ešte väčšie zhoršenie a práve sa nemôžeš vôbec venovať svojim cieľom.",
+        "questionid": 15,
+        "ans": [
+            {
+            "text": "Počkám, ako sa situácia vyvinie sama.",
+            "answerid": 1501
+            },
+            {
+            "text": "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
+            "answerid": 1502
+            }
+        ]
         }
     ]
-}
+    }
+      
+      
