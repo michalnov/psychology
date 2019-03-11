@@ -35,6 +35,10 @@ func (c *Core) Ping(w http.ResponseWriter, r *http.Request) {
 
 //UserHandler --
 func (c *Core) UserHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method == "OPTIONS" {
+		w.WriteHeader(200)
+		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+	}
 	var req user
 	err := json.NewDecoder(r.Body).Decode(&req)
 	fmt.Println("\n\n", req.Kluc)
