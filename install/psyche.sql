@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `psyche`.`answered` (
   `testid` INT NOT NULL,
   `questionid` INT NOT NULL,
   `answerid` INT NOT NULL,
-  `datetime` DATETIME NOT NULL DEFAULT current_tiemstamp,
+  `datetime` DATETIME NOT NULL DEFAULT current_timestamp,
   PRIMARY KEY (`idanswered`))
 ENGINE = InnoDB;
 
