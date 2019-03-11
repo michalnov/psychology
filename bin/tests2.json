@@ -116,7 +116,7 @@
             "questionid" : 7,
             "ans" : [
                 {
-                    "text" : Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.,
+                    "text" : "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
                     "answerid" : 701
                 },
                 {
