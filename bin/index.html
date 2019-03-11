@@ -107,15 +107,15 @@
                 </div>
                 <!--  -->
                 <div  style="display: none;" id="test">
-                    <p><h4 style="width:95%; margin:auto; margin-top: 5%">10. Dostal si novú pracovnú ponuku. Pracovná pozícia je vyššia ako tá, ktorú si mal/a doteraz ale finančné ohodnotenie je nižšie ako to, ktoré máš teraz. Prijmeš túto novú ponuku?</h4></p>
+                    <p><h4 style="width:95%; margin:auto; margin-top: 5%" id="quest"></h4></p>
                     <div class="clickable">
-                        <p style="width:95%; margin:auto;">Zameriam sa skôr na pracovné vzťahy s nadriadeným a kolegami.</p>
+                        <p style="width:95%; margin:auto;" id="ans1" onclick="answer(1)"></p>
                     </div>
                     <div class="clickable">
-                        <p style="width:95%; margin:auto;">Skúsim zariskovať na možný úkor svojho miesta ale s možnosťou vysokého postupu a zvýšenia platu.</p>
+                        <p style="width:95%; margin:auto;" id="ans2" onclick="answer(2)"></p>
                     </div>
                     <div class="clickable">
-                        <p style="width:95%; margin:auto;">Nechcem odpovedat</p>
+                        <p style="width:95%; margin:auto;" onclick="answer(3)">Nechcem odpovedat</p>
                     </div>
                 </div>
                 <div  style="display: none;" id="finish">
@@ -249,6 +249,7 @@
                     var x = document.getElementById("headform");
                     x.style.display = "none";
                     document.getElementById("instruction").style.display = "block";
+
                 }
             };
             xhttp.open("POST", host+"/user", true);
@@ -293,6 +294,7 @@ let temptest;
                 if (this.readyState == 4 && this.status == 200) {
                     temptest = this.responseText;
                     test = JSON.parse(this.responseText);
+                    loadque(0);
                 }
             };
             xhttp.open("POST", host+"/gettest", true);
@@ -300,6 +302,36 @@ let temptest;
             xhttp.send("{\"test\":\""+param+"\",\"userid\":"+userID+"}");
             document.getElementById("selectTest").style.display = "none";
             document.getElementById("test").style.display = "block";
+        }
+
+        function loadque(params) {
+            document.getElementById("quest").innerHTML = test.que[pc].text;
+            document.getElementById("ans1").innerHTML = test.que[pc].ans[0].text;
+            document.getElementById("ans2").innerHTML = test.que[pc].ans[1].text;
+        }
+
+        let pc = 0;
+        let block = false;
+        function answer(params) {
+            if (block) {
+                return
+            }
+            block = true;
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    temptest = this.responseText;
+                    test = JSON.parse(this.responseText);
+                    block = false;
+                    pc++;
+                    loadque(pc);
+                } else if (this.readyState == 4) {
+                    block = false;
+                }
+            };
+            xhttp.open("POST", host+"/answer", true);
+            xhttp.setRequestHeader("Content-type", "application/json");
+            xhttp.send("{\"testid\":"+test.testid+",\"userid\":"+userID+",\"questionid\":"+test.que[pc].questionid+",\"answerid\":"+test.que[pc].ans[(params-1)].answerid+"}");
         }
     </script>
 </body>

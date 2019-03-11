@@ -14,6 +14,9 @@
             {
             "text": "Vyberiem si podľa toho, ktoré budú čo najviac kultúrne zamerané.",
             "answerid": 102
+            },{
+                "text" : "Nechcem odpovedat.",
+                "answerid" : 103
             }
         ]
         },
@@ -28,6 +31,9 @@
             {
             "text": "Zameriam sa skôr na užívanie si s priateľmi.",
             "answerid": 202
+            },{
+                "text" : "Nechcem odpovedat.",
+                "answerid" : 203
             }
         ]
         },
@@ -42,6 +48,9 @@
             {
             "text": "Môj prístup bude skôr zameraný na prežívania čo najviac zážitkov na úkor cestovania a spoznávania.",
             "answerid": 302
+            },{
+                "text" : "Nechcem odpovedat.",
+                "answerid" : 303
             }
         ]
         },
@@ -56,6 +65,9 @@
             {
             "text": "Pokúsim sa si zarobiť a presvedčiť sa, že som si vybral správne.",
             "answerid": 402
+            },{
+                "text" : "Nechcem odpovedat.",
+                "answerid" : 403
             }
         ]
         },
@@ -70,6 +82,9 @@
             {
             "text": "Skúsim zariskovať na možný úkorväčšieho množstva peňazí ale s možnosťou prežiť niečo nezabudnuteľné.",
             "answerid": 502
+            },{
+                "text" : "Nechcem odpovedat.",
+                "answerid" : 503
             }
         ]
         },
@@ -84,6 +99,9 @@
             {
             "text": "Zvolím si menej dobrých zážitkov.",
             "answerid": 602
+            },{
+                "text" : "Nechcem odpovedat.",
+                "answerid" : 603
             }
         ]
         },
@@ -98,6 +116,9 @@
             {
             "text": "Pokúsim sa zmeniť svoj prístup.",
             "answerid": 702
+            },{
+                "text" : "Nechcem odpovedat.",
+                "answerid" : 703
             }
         ]
         },
@@ -112,6 +133,9 @@
             {
             "text": "Zameriam sa na užívanie si s priateľmi.",
             "answerid": 802
+            },{
+                "text" : "Nechcem odpovedat.",
+                "answerid" : 803
             }
         ]
         },
@@ -126,6 +150,9 @@
             {
             "text": "Pokúsim sa žiť pre daný okamih.",
             "answerid": 902
+            },{
+                "text" : "Nechcem odpovedat.",
+                "answerid" : 903
             }
         ]
         },
@@ -140,6 +167,9 @@
             {
             "text": "Nie, nevyužijem.",
             "answerid": 1002
+            },{
+                "text" : "Nechcem odpovedat.",
+                "answerid" : 1003
             }
         ]
         },
@@ -154,6 +184,9 @@
             {
             "text": "Pokúsim sa zmeniť svoj prístup.",
             "answerid": 1102
+            },{
+                "text" : "Nechcem odpovedat.",
+                "answerid" : 1103
             }
         ]
         },
@@ -168,6 +201,9 @@
             {
             "text": "Skúšam vyhľadávať a objavovať viac ako zvyčajne.",
             "answerid": 1202
+            },{
+                "text" : "Nechcem odpovedat.",
+                "answerid" : 1203
             }
         ]
         },
@@ -182,6 +218,9 @@
             {
             "text": "Zariskujem stratu zážitkov.",
             "answerid": 1302
+            },{
+                "text" : "Nechcem odpovedat.",
+                "answerid" : 1303
             }
         ]
         },
@@ -196,6 +235,9 @@
             {
             "text": "Poľavím a pokúsim sa si oddýchnuť.",
             "answerid": 1402
+            },{
+                "text" : "Nechcem odpovedat.",
+                "answerid" : 1403
             }
         ]
         },
@@ -210,6 +252,9 @@
             {
             "text": "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
             "answerid": 1502
+            },{
+                "text" : "Nechcem odpovedat.",
+                "answerid" : 1503
             }
         ]
         }

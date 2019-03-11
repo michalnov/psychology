@@ -14,6 +14,10 @@
                 {
                     "text" : "Vyberiem si podľa toho, v čom sa mi najviac darí a kde podávam najlepší výkon.",
                     "answerid" : 102
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 103
                 }
             ]
         },
@@ -28,6 +32,10 @@
                 {
                     "text" : "Zameriam sa skôr na podávanie čo najlepšieho výkonu.",
                     "answerid" : 202
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 203
                 }
             ]
         },
@@ -42,6 +50,10 @@
                 {
                     "text" : "Môj prístup bude skôr zameraný na výkon a rešpekt s možnosťou zlých vzťahov s podriadenými.",
                     "answerid" : 302
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 303
                 }
             ]
         },
@@ -56,6 +68,10 @@
                 {
                     "text" : "Pokúsim sa presadiť a dokázať, že si svoje miesto zaslúžim.",
                     "answerid" : 402
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 403
                 }
             ]
         },
@@ -70,6 +86,10 @@
                 {
                     "text" : "Skúsim zariskovať na možný úkor svojho miesta ale s možnosťou vysokého postupu a zvýšenia platu.",
                     "answerid" : 502
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 503
                 }
             ]
         },
@@ -84,6 +104,10 @@
                 {
                     "text" : "Nechám si nezmenený plat a prejdem na nižšiu pracovnú pozíciu.",
                     "answerid" : 602
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 603
                 }
             ]
         },
@@ -98,6 +122,10 @@
                 {
                     "text" : "Pokúsim sa zmeniť svoj prístup.",
                     "answerid" : 702
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 703
                 }
             ]
         },
@@ -112,6 +140,10 @@
                 {
                     "text" : "Zameriam sa skôr na podávanie čo najlepšieho výkonu.",
                     "answerid" : 802
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 803
                 }
             ]
         },
@@ -126,6 +158,10 @@
                 {
                     "text" : "Budem sa sústrediť na aktuálne dianie v práci.",
                     "answerid" : 902
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 903
                 }
             ]
         },
@@ -140,6 +176,10 @@
                 {
                     "text" : "Nie, nevezmem.",
                     "answerid" : 1002
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 1003
                 }
             ]
         },
@@ -154,6 +194,10 @@
                 {
                     "text" : "Pokúsim sa zmeniť svoj prístup.",
                     "answerid" : 1102
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 1103
                 }
             ]
         },
@@ -168,6 +212,10 @@
                 {
                     "text" : "Pokračujem ako doteraz, ale robím aj prácu navyše. ",
                     "answerid" : 1202
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 1203
                 }
             ]
         },
@@ -182,6 +230,10 @@
                 {
                     "text" : "Zariskujem stratu miesta.",
                     "answerid" : 1302
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 1303
                 }
             ]
         },
@@ -196,6 +248,10 @@
                 {
                     "text" : "Poľavím a pokúsim sa si oddýchnuť.",
                     "answerid" : 1402
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 1403
                 }
             ]
         },
@@ -210,6 +266,10 @@
                 {
                     "text" : "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
                     "answerid" : 1502
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 1503
                 }
             ]
         }

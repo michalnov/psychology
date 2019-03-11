@@ -14,6 +14,10 @@
                 {
                     "text" : "Vyberiem si predovšetkým na yáklade priťažlivosti.",
                     "answerid" : 102
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 103
                 }
             ]
         },
@@ -28,6 +32,10 @@
                 {
                     "text" : "Zameriam sa skôr na zabezpečenie rodiny.",
                     "answerid" : 202
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 203
                 }
             ]
         },
@@ -42,6 +50,10 @@
                 {
                     "text" : "Môj prístup bude zameraný skôr na vzťah s partnerom/kou s možnosťou zhoršenia vzťahu s dieťaťom.",
                     "answerid" : 302
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 303
                 }
             ]
         },
@@ -56,6 +68,10 @@
                 {
                     "text" : "Pokúsim sa presadiť a situáciu zlepšiť.",
                     "answerid" : 402
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 403
                 }
             ]
         },
@@ -70,6 +86,10 @@
                 {
                     "text" : "Skúsim zariskovať na možný úkor svojej rodiny ale s možnosťou veľkého zlepšenia vzťahov a zabezpečenia.",
                     "answerid" : 502
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 503
                 }
             ]
         },
@@ -84,6 +104,10 @@
                 {
                     "text" : "Udržím si vzťah s dieťaťom a zhorším ten s partmerom/kou.",
                     "answerid" : 602
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 603
                 }
             ]
         },
@@ -98,6 +122,10 @@
                 {
                     "text" : "Pokúsim sa zmeniť svoj prístup.",
                     "answerid" : 702
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 703
                 }
             ]
         },
@@ -112,6 +140,10 @@
                 {
                     "text" : "Zameriam sa skôr na zabezpečenie rodiny.",
                     "answerid" : 802
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 803
                 }
             ]
         },
@@ -126,6 +158,10 @@
                 {
                     "text" : "Budem sa sústrediť na to, čo sa aktuálne deje v naších životoch.",
                     "answerid" : 902
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 903
                 }
             ]
         },
@@ -140,6 +176,10 @@
                 {
                     "text" : "Nie, neurobím to.",
                     "answerid" : 1002
+                },
+                {
+                    "text" : "Nechcem odpovedat.",
+                    "answerid" : 1003
                 }
             ]
         },
@@ -152,53 +192,37 @@
             "ans": [
       
               {
-      
                 "text": "Počkám, ako sa situácia vyvinie sama.",
-      
                 "answerid": 1101
-      
               },
-      
               {
-      
                 "text": "Pokúsim sa zmeniť svoj prístup.",
-      
                 "answerid": 1102
-      
-              }
-      
-            ]
-      
-          },
-      
-          {
-      
-            "text": "Vďaka tvjmu rozhodnutiu je opäť všetko v poriadku. Ako budeš pokračovať?",
-      
-            "questionid": 12,
-      
-            "ans": [
-      
-              {
-      
-                "text": "Sústredím sa na svoju rodinu najlepšie ako viem.",
-      
-                "answerid": 1201
-      
               },
-      
               {
-      
-                "text": "Pokračujem ako doteraz ale robím veci navyše. ",
-      
-                "answerid": 1202
-      
+                  "text" : "Nechcem odpovedat.",
+                  "answerid" : 1103
               }
-      
             ]
-      
           },
-      
+          {
+            "text": "Vďaka tvjmu rozhodnutiu je opäť všetko v poriadku. Ako budeš pokračovať?",
+            "questionid": 12,
+            "ans": [
+              {
+                "text": "Sústredím sa na svoju rodinu najlepšie ako viem.",
+                "answerid": 1201
+              },
+              {
+                "text": "Pokračujem ako doteraz ale robím veci navyše. ",
+                "answerid": 1202
+              },
+              {
+                  "text" : "Nechcem odpovedat.",
+                  "answerid" : 1203
+              }
+            ]
+          },
           {
       
             "text": "Vyskytli sa ti vážne zdravotné problémy. Ak budeš pokračovať rovnako vo svojom rodinnom výkone môže sa tvoj stav zhoršiť, ale ak poľavíš môže to narušiť chod celej rodiny.",
@@ -221,6 +245,10 @@
       
                 "answerid": 1302
       
+              },
+              {
+                  "text" : "Nechcem odpovedat.",
+                  "answerid" : 1303
               }
       
             ]
@@ -249,6 +277,10 @@
       
                 "answerid": 1402
       
+              },
+              {
+                  "text" : "Nechcem odpovedat.",
+                  "answerid" : 1403
               }
       
             ]
@@ -277,6 +309,10 @@
       
                 "answerid": 1502
       
+              },
+              {
+                  "text" : "Nechcem odpovedat.",
+                  "answerid" : 1503
               }
       
             ]

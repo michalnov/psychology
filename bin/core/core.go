@@ -125,6 +125,50 @@ func (c *Core) GetTest(w http.ResponseWriter, r *http.Request) {
 
 }
 
+type naswer struct {
+	Userid     int `json:"userid"`
+	Testid     int `json:"testid"`
+	Questionid int `json:"questionid"`
+	Ansid      int `json:"answerid"`
+}
+
+//Answerque --
+func (c *Core) Answerque(w http.ResponseWriter, r *http.Request) {
+	if r.Method != "POST" {
+		w.WriteHeader(200)
+		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+	}
+	var req naswer
+	err := json.NewDecoder(r.Body).Decode(&req)
+	if err != nil {
+		w.WriteHeader(300)
+		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		return
+	}
+	db, err := sql.Open("mysql", c.DbMaster)
+	if err != nil {
+		w.WriteHeader(300)
+		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		return
+	}
+	defer db.Close()
+	statement, err := db.Prepare("insert into answered(userid,testid,questionid,answerid) values(?,?,?,?)")
+	if err != nil {
+		w.WriteHeader(500)
+		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		return
+	}
+	_, err = statement.Exec(req.Userid, req.Testid, req.Questionid, req.Ansid)
+	if err != nil {
+		w.WriteHeader(500)
+		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		return
+	}
+	w.WriteHeader(200)
+	fmt.Fprintf(w, "{\"status\" : \"ok\"}")
+	return
+}
+
 //LoadTests -
 func (c *Core) LoadTests() error {
 	var swap structures.Test
