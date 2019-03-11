@@ -238,20 +238,30 @@
         function sendForm(){
             if (testUser()) {
                 console.log("something");
-                
                 return
-            }            
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
+            } 
+            $.post(host+"/user", JSON.stringify(user),
+            function(data, status){
+                console.log(status);
+                
+                if (status==200) {
                     swap = JSON.parse(this.responseText)
                     userID = swap.user
                     selectTest();
                 }
-            };
-            xhttp.open("POST", host+"/user", true);
-            xhttp.setRequestHeader("Content-type", "application/json");
-            xhttp.send(JSON.stringify(user));
+                
+            });         
+            //var xhttp = new XMLHttpRequest();
+            //xhttp.onreadystatechange = function() {
+            //    if (this.readyState == 4 && this.status == 200) {
+            //        swap = JSON.parse(this.responseText)
+            //        userID = swap.user
+            //        selectTest();
+            //    }
+            //};
+            //xhttp.open("POST", host+"/user", true);
+            //xhttp.setRequestHeader("Content-type", "application/json");
+            //xhttp.send(JSON.stringify(user));
             console.log("aaaa");
             var x = document.getElementById("headform");
             x.style.display = "none";

@@ -21,10 +21,10 @@ type Core struct {
 }
 
 type user struct {
-	Kluc  string `json:"kluc"`
-	Vek   string `json:"vek"`
-	Rod   string `json:"rod"`
-	Skola string `json:"skola"`
+	Kluc  string `json:"kluc,ommitempty"`
+	Vek   string `json:"vek,ommitempty"`
+	Rod   string `json:"rod,ommitempty"`
+	Skola string `json:"skola,ommitempty"`
 }
 
 //Ping --
@@ -37,6 +37,7 @@ func (c *Core) Ping(w http.ResponseWriter, r *http.Request) {
 func (c *Core) UserHandler(w http.ResponseWriter, r *http.Request) {
 	var req user
 	err := json.NewDecoder(r.Body).Decode(&req)
+	fmt.Println("\n\n", req.Kluc)
 	if err != nil {
 		w.WriteHeader(300)
 		fmt.Fprintf(w, "{\"status\" : \"error\"}")
