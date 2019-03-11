@@ -143,6 +143,8 @@
         let test = {};
         let user = {};
         let userID = 0;
+        let pc = 0;
+        let block = false;
 
         class Test{
             constructor(param){
@@ -294,7 +296,7 @@ let temptest;
                 if (this.readyState == 4 && this.status == 200) {
                     temptest = this.responseText;
                     test = JSON.parse(this.responseText);
-                    loadque(0);
+                    loadque();
                 }
             };
             xhttp.open("POST", host+"/gettest", true);
@@ -304,16 +306,16 @@ let temptest;
             document.getElementById("test").style.display = "block";
         }
 
-        function loadque(params) {
+        function loadque() {
+            pc = Number.parseInt(pc);
             document.getElementById("quest").innerHTML = test.que[pc].text;
             document.getElementById("ans1").innerHTML = test.que[pc].ans[0].text;
             document.getElementById("ans2").innerHTML = test.que[pc].ans[1].text;
         }
 
-        let pc = 0;
-        let block = false;
+        
         function answer(params) {
-            if (block) {
+            if (block || pc > 14) {
                 console.log("block");
                 
                 return
@@ -322,13 +324,20 @@ let temptest;
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    block = false;
+                    setTimeout(function () {
+                       block = false; 
+                    },1500);
                     pc++;
-                    loadque(pc);
+                    if (pc > 14) {
+                        
+                    }
+                    loadque();
                 } else if (this.readyState == 4) {
                     block = false;
                     console.log("ans failed");
-                    
+                }
+                if (pc == 15) {
+
                 }
             };
             xhttp.open("POST", host+"/answer", true);
