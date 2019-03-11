@@ -17,7 +17,15 @@
             border-width:1px; 
             border-radius:7px;
             padding: 3px;
-            
+        }
+        .gas{
+            width: 100%;
+            margin: auto;
+            margin-top: 10px; 
+            border-style: solid; 
+            border-width:1px; 
+            border-radius:7px;
+            padding: 1px;
         }
         #overlay {
             position: fixed;
@@ -91,18 +99,18 @@
                     </table>
                 </div>
                 <div style="display: none;" id="instruction">
-                    <h4 style="width:95%; margin:auto;margin-top: 5%; margin-bottom: 5%;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of</h4>
+                    <h4 style="width:95%; margin:auto;margin-top: 5%; margin-bottom: 5%;">Dobrý deň, ďakujem Vám za účasť na nasledujúcom výskume. Vaše výsledky budú anonymné a použité len na výskumné účely. Vaša účasť je dobrovoľná. V nasledujúcej časti Vám budú prezentované 3 rôzne ciele. Vašou úlohou bude si jeden vybrať a následne sa ho snažiť dosiahnuť. Bude následovať séria otázok s dvoma možnosťami, ktoré ovplyvnia to, či svoj cieľ dosiahnete alebo nie. POZOR spôsob rozhodovania sa Vám určí výskumník. Každé vaše rozhonutie ovplyvní to, či sa Vám bude dariť alebo nie. Veľa šťastia.</h4>
                     <button type="button" class="btn btn-primary" style="margin-left: 25%;" onclick="selectTest()">Zacat test</button>
                 </div>
                 <div style="display: none;" id="selectTest">
                     <div class="clickable">
-                        <p style="width:95%; margin:auto;" onclick="startTest('vztah')">Vztahy Ipsum is simply dummy text of the printing</button>
+                        <p style="width:95%; margin:auto;" onclick="startTest('vztah')">Mojim cieľom bude zamerať sa na vzťahy a rodinu. Konkrétne založiť si rodinu a udržať si naplňujúce vzťahy.</button>
                     </div>
                     <div class="clickable">
-                            <p style="width:95%; margin:auto;" onclick="startTest('zazitky')">zazitky Ipsum is simply dummy text of the printing</button>
+                            <p style="width:95%; margin:auto;" onclick="startTest('zazitky')">Mojim cieľom bude zamerať sa na užívanie si života. Konkrétne precestovať čo najviac miest a nazbierať si čo najviac zážitkov.</button>
                     </div>
                     <div class="clickable">
-                            <p style="width:95%; margin:auto;" onclick="startTest('praca')">praca Ipsum is simply dummy text of the printing</button>
+                            <p style="width:95%; margin:auto;" onclick="startTest('praca')">Mojim cieľom bude zamerať sa na kariéru. Konkrétne dosiahnuť čo najvyššiu pozíciu a plat.</button>
                     </div>
                 </div>
                 <!--  -->
@@ -118,13 +126,116 @@
                         <p style="width:95%; margin:auto;" onclick="answer(3)">Nechcem odpovedat</p>
                     </div>
                 </div>
-                <div  style="display: none;" id="finish">
+                <div  style="display: none;" id="gasscale">
+                    <div ><h4 style="margin-bottom: 20px;">Ľudia počas svojho života nedokážu vždy dosiahnuť to, čo chcú a niekedy sú nútení ukončiť svoje snahy o dosahovanie cieľov, ktoré si stanovili. Zaujíma nás, ako, by ste reagovali v tomto prípade. Označte mieru Vášho súhlasu alebo nesúhlasu s každým z nasledujúcich tvrdení podľa toho, ako vystihujú Vaše správanie v tejto situácii.</h4></div>
+                    <div class="gas">
+                        <p style="width:95%; margin:auto;"> <b>Jednoducho svoju snahu o dosiahnutie tohto cieľa znížim.</b></p>
+                        <table>
+                            <tr>
+                                <td style="width: 25%;">úplne súhlasím</td>
+                                <td><input type="range" name="gas1" id="gas1" max="5" min="1" value="3"></td>
+                                <td style="width: 25%;">úplne nesúhlasím</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="gas">
+                        <p style="width:95%; margin:auto;"> <b>Presviedčam sám seba, že mám ešte ďalšie zmysluplné ciele, ktoré sa môžem snažiť dosiahnuť.</b></p>
+                        <table>
+                            <tr>
+                                <td style="width: 25%;">úplne súhlasím</td>
+                                <td><input type="range" name="gas2" id="gas2" max="5" min="1" value="3"></td>
+                                <td style="width: 25%;">úplne nesúhlasím</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="gas">
+                        <p style="width:95%; margin:auto;"> <b>Dlho zostanem na tento cieľ zameraný, neviem sa ho vzdať.</b></p>
+                        <table>
+                            <tr>
+                                <td style="width: 25%;">úplne súhlasím</td>
+                                <td><input type="range" name="gas3" id="gas3" max="5" min="1" value="3"></td>
+                                <td style="width: 25%;">úplne nesúhlasím</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="gas">
+                        <p style="width:95%; margin:auto;"> <b>Začnem pracovať na ďalších nových cieľoch.</b></p>
+                        <table>
+                            <tr>
+                                <td style="width: 25%;">úplne súhlasím</td>
+                                <td><input type="range" name="gas4" id="gas4" max="5" min="1" value="3"></td>
+                                <td style="width: 25%;">úplne nesúhlasím</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="gas">
+                        <p style="width:95%; margin:auto;"> <b>Premýšľam o ďalších nových cieľoch, ktoré sa môžem snažiť dosiahnuť.</b></p>
+                        <table>
+                            <tr>
+                                <td style="width: 25%;">úplne súhlasím</td>
+                                <td><input type="range" name="gas5" id="gas5" max="5" min="1" value="3"></td>
+                                <td style="width: 25%;">úplne nesúhlasím</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="gas">
+                        <p style="width:95%; margin:auto;"> <b>Pripadá mi ťažké prestať sa usilovať o dosiahnutie tohto cieľa.</b></p>
+                        <table>
+                            <tr>
+                                <td style="width: 25%;">úplne súhlasím</td>
+                                <td><input type="range" name="gas6" id="gas6" max="5" min="1" value="3"></td>
+                                <td style="width: 25%;">úplne nesúhlasím</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="gas">
+                        <p style="width:95%; margin:auto;"> <b>Hľadám ďalšie zmysluplné ciele.</b></p>
+                        <table>
+                            <tr>
+                                <td style="width: 25%;">úplne súhlasím</td>
+                                <td><input type="range" name="gas7" id="gas7" max="5" min="1" value="3"></td>
+                                <td style="width: 25%;">úplne nesúhlasím</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="gas">
+                        <p style="width:95%; margin:auto;"> <b>Jednoducho prestanem o tomto cieli uvažovať a vzdám sa ho.</b></p>
+                        <table>
+                            <tr>
+                                <td style="width: 25%;">úplne súhlasím</td>
+                                <td><input type="range" name="gas8" id="gas8" max="5" min="1" value="3"></td>
+                                <td style="width: 25%;">úplne nesúhlasím</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="gas">
+                        <p style="width:95%; margin:auto;"> <b>Hovorím si, že mám ešte množstvo ďalších nových cieľov, z ktorých môžem čerpať.</b></p>
+                        <table>
+                            <tr>
+                                <td style="width: 25%;">úplne súhlasím</td>
+                                <td><input type="range" name="gas9" id="gas9" max="5" min="1" value="3"></td>
+                                <td style="width: 25%;">úplne nesúhlasím</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="gas">
+                        <p style="width:95%; margin:auto;"> <b>Svoje úsilie zameriam na ďalšie zmysluplné ciele.</b></p>
+                        <table>
+                            <tr>
+                                <td style="width: 25%;">úplne súhlasím</td>
+                                <td><input type="range" name="gas10" id="gas10" max="5" min="1" value="3"></td>
+                                <td style="width: 25%;">úplne nesúhlasím</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="margin-left: 30%;"><button id="endgame" class="btn btn-success"  onclick="sendgas()">Dokončiť</button></div>
                     
                 </div>
             </div>
             <div class="col-sm-4"></div>
         </div>
     </div>
+
 
     <script>
         function overlayOn() {
@@ -134,6 +245,7 @@
         
         function overlayOff() {
             document.getElementById("overlay").style.display = "none";
+            document.getElementById("gasscale").style.display = "block";
         }
     </script>
 
@@ -313,6 +425,12 @@ let temptest;
             document.getElementById("ans2").innerHTML = test.que[pc].ans[1].text;
         }
 
+        function finishtest() {
+            overlayOn();
+            document.getElementById("test").style.display = "none";
+            
+        }
+
         
         function answer(params) {
             if (block || pc > 14) {
@@ -329,7 +447,8 @@ let temptest;
                     },1500);
                     pc++;
                     if (pc > 14) {
-                        
+                        finishtest();
+                        return
                     }
                     loadque();
                 } else if (this.readyState == 4) {
@@ -343,6 +462,40 @@ let temptest;
             xhttp.open("POST", host+"/answer", true);
             xhttp.setRequestHeader("Content-type", "application/json");
             xhttp.send("{\"testid\":"+test.testid+",\"userid\":"+userID+",\"questionid\":"+test.que[pc].questionid+",\"answerid\":"+test.que[pc].ans[(params-1)].answerid+"}");
+        }
+
+        function sendgas() {
+            block = true;
+            req = {
+                userid : userID,
+                gas1 : document.getElementById("gas1").value,
+                gas2 : document.getElementById("gas2").value,
+                gas3 : document.getElementById("gas3").value,
+                gas4 : document.getElementById("gas4").value,
+                gas5 : document.getElementById("gas5").value,
+                gas6 : document.getElementById("gas6").value,
+                gas7 : document.getElementById("gas7").value,
+                gas8 : document.getElementById("gas8").value,
+                gas9 : document.getElementById("gas9").value,
+                gas10 : document.getElementById("gas10").value
+            }
+            console.log(req);
+            
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    setTimeout(function () {
+                       block = false; 
+                    },1500);
+                    loadque();
+                } else if (this.readyState == 4) {
+                    console.log("gas failed");
+                }
+            
+            };
+            xhttp.open("POST", host+"/gas", true);
+            xhttp.setRequestHeader("Content-type", "application/json");
+            xhttp.send(JSON.stringify(req));
         }
     </script>
 </body>

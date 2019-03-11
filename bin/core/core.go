@@ -10,6 +10,7 @@ import (
 
 	"github.com/michalnov/psychology/bin/core/structures"
 
+	//need
 	_ "github.com/go-sql-driver/mysql" //needed
 )
 
@@ -136,9 +137,60 @@ type naswer struct {
 func (c *Core) Answerque(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
 		w.WriteHeader(200)
-		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		fmt.Fprintf(w, "{\"status\" : \"NOT POST error\"}")
 	}
 	var req naswer
+	err := json.NewDecoder(r.Body).Decode(&req)
+	if err != nil {
+		w.WriteHeader(300)
+		fmt.Fprintf(w, "{\"status\" : \"DECODE error\"}")
+		return
+	}
+	db, err := sql.Open("mysql", c.DbMaster)
+	if err != nil {
+		w.WriteHeader(300)
+		fmt.Fprintf(w, "{\"status\" : \"DB open error\"}")
+		return
+	}
+	defer db.Close()
+	statement, err := db.Prepare("insert into answered(userid,testid,questionid,answerid) values(?,?,?,?)")
+	if err != nil {
+		w.WriteHeader(500)
+		fmt.Fprintf(w, "{\"status\" : \"INSERT error\"}")
+		return
+	}
+	_, err = statement.Exec(req.Userid, req.Testid, req.Questionid, req.Ansid)
+	if err != nil {
+		w.WriteHeader(500)
+		fmt.Fprintf(w, "{\"status\" : \"EXEC error\"}")
+		return
+	}
+	w.WriteHeader(200)
+	fmt.Fprintf(w, "{\"status\" : \"ok\"}")
+	return
+}
+
+type gas struct {
+	Userid int `json:"userid"`
+	Gas1   int `json:"gas1"`
+	Gas2   int `json:"gas2"`
+	Gas3   int `json:"gas3"`
+	Gas4   int `json:"gas4"`
+	Gas5   int `json:"gas5"`
+	Gas6   int `json:"gas6"`
+	Gas7   int `json:"gas7"`
+	Gas8   int `json:"gas8"`
+	Gas9   int `json:"gas9"`
+	Gas10  int `json:"gas10"`
+}
+
+//GetGas --
+func (c *Core) GetGas(w http.ResponseWriter, r *http.Request) {
+	if r.Method != "POST" {
+		w.WriteHeader(200)
+		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+	}
+	var req gas
 	err := json.NewDecoder(r.Body).Decode(&req)
 	if err != nil {
 		w.WriteHeader(300)
@@ -152,13 +204,13 @@ func (c *Core) Answerque(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	defer db.Close()
-	statement, err := db.Prepare("insert into answered(userid,testid,questionid,answerid) values(?,?,?,?)")
+	statement, err := db.Prepare("insert into gas(userid,gas1,gas2,gas3,gas4,gas5,gas6,gas7,gas8,gas9,gas10) values(?,?,?,?,?,?,?,?,?,?,?)")
 	if err != nil {
 		w.WriteHeader(500)
 		fmt.Fprintf(w, "{\"status\" : \"error\"}")
 		return
 	}
-	_, err = statement.Exec(req.Userid, req.Testid, req.Questionid, req.Ansid)
+	_, err = statement.Exec(req.Userid, req.Gas1, req.Gas2, req.Gas3, req.Gas4, req.Gas5, req.Gas6, req.Gas7, req.Gas8, req.Gas9, req.Gas10)
 	if err != nil {
 		w.WriteHeader(500)
 		fmt.Fprintf(w, "{\"status\" : \"error\"}")
@@ -205,3 +257,22 @@ func readTest(name string) (structures.Test, error) {
 	}
 	return out, nil
 }
+
+/*
+func Activationmail(email string, tokenn string, mailer str.Mail) {
+	m := gomail.NewMessage()
+	m.SetHeader("From", "martinhercka1@gmail.com")
+	m.SetHeader("To", email)
+	m.SetHeader("Subject", "Hello")
+	m.SetBody("text/html", mailer.Host+mailer.Port+"/auth/activate?token="+tokenn)
+
+	if mailer.Username == "" || mailer.Password == "" {
+		fmt.Println(mailer.Host + mailer.Port + "/auth/activate?token=" + tokenn)
+		return
+	}
+	d := gomail.NewDialer("smtp.gmail.com", 587, mailer.Username, mailer.Password)
+
+	if err := d.DialAndSend(m); err != nil {
+		panic(err)
+}
+*/

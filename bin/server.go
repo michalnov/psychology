@@ -39,9 +39,10 @@ func main() {
 	r.HandleFunc("/user", c.UserHandler)
 	r.HandleFunc("/gettest", c.GetTest).Methods("POST")
 	r.HandleFunc("/ping", c.Ping).Methods("GET")
-	r.HandleFunc("/answer", notImplemented).Methods("POST")
+	r.HandleFunc("/answer", c.Answerque).Methods("POST")
 	r.HandleFunc("/finishtest", notImplemented).Methods("POST")
-	r.HandleFunc("/finishtest", notImplemented).Methods("POST")
+	r.HandleFunc("/gas", c.GetGas).Methods("POST")
+
 	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "index.html")
 	})
