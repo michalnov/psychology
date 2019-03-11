@@ -137,32 +137,32 @@ type naswer struct {
 func (c *Core) Answerque(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
 		w.WriteHeader(200)
-		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		fmt.Fprintf(w, "{\"status\" : \"NOT POST error\"}")
 	}
 	var req naswer
 	err := json.NewDecoder(r.Body).Decode(&req)
 	if err != nil {
 		w.WriteHeader(300)
-		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		fmt.Fprintf(w, "{\"status\" : \"DECODE error\"}")
 		return
 	}
 	db, err := sql.Open("mysql", c.DbMaster)
 	if err != nil {
 		w.WriteHeader(300)
-		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		fmt.Fprintf(w, "{\"status\" : \"DB open error\"}")
 		return
 	}
 	defer db.Close()
 	statement, err := db.Prepare("insert into answered(userid,testid,questionid,answerid) values(?,?,?,?)")
 	if err != nil {
 		w.WriteHeader(500)
-		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		fmt.Fprintf(w, "{\"status\" : \"INSERT error\"}")
 		return
 	}
 	_, err = statement.Exec(req.Userid, req.Testid, req.Questionid, req.Ansid)
 	if err != nil {
 		w.WriteHeader(500)
-		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		fmt.Fprintf(w, "{\"status\" : \"EXEC error\"}")
 		return
 	}
 	w.WriteHeader(200)
