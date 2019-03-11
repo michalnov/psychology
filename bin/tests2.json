@@ -63,7 +63,7 @@
             "ans" : [
                 {
                     "text" : "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
-                   "reverse" : false,  "answerid" : 401
+                   "reverse" : true,  "answerid" : 401
                 },
                 {
                     "text" : "Pokúsim sa presadiť a situáciu zlepšiť.",
@@ -117,7 +117,7 @@
             "ans" : [
                 {
                     "text" : "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
-                   "reverse" : false,  "answerid" : 701
+                   "reverse" : true,  "answerid" : 701
                 },
                 {
                     "text" : "Pokúsim sa zmeniť svoj prístup.",
@@ -307,7 +307,7 @@
       
                 "text": "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
       
-               "reverse" : false,  "answerid": 1502
+               "reverse" : true,  "answerid": 1502
       
               },
               {
