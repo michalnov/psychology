@@ -91,7 +91,6 @@ func (c *Core) GetTest(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		w.WriteHeader(300)
 		fmt.Fprintf(w, "{\"status\" : \"error\"}")
-		panic(err)
 		return
 	}
 	for _, test := range c.Tests {
