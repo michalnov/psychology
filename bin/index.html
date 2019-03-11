@@ -488,17 +488,17 @@ let temptest;
         function sendgas() {
             block = true;
             req = {
-                userid : userID,
-                gas1 : document.getElementById("gas1").value,
-                gas2 : document.getElementById("gas2").value,
-                gas3 : document.getElementById("gas3").value,
-                gas4 : document.getElementById("gas4").value,
-                gas5 : document.getElementById("gas5").value,
-                gas6 : document.getElementById("gas6").value,
-                gas7 : document.getElementById("gas7").value,
-                gas8 : document.getElementById("gas8").value,
-                gas9 : document.getElementById("gas9").value,
-                gas10 : document.getElementById("gas10").value
+                userid : Number.parseInt(userID),
+                gas1 : Number.parseInt(document.getElementById("gas1").value),
+                gas2 : Number.parseInt(document.getElementById("gas2").value),
+                gas3 : Number.parseInt(document.getElementById("gas3").value),
+                gas4 : Number.parseInt(document.getElementById("gas4").value),
+                gas5 : Number.parseInt(document.getElementById("gas5").value),
+                gas6 : Number.parseInt(document.getElementById("gas6").value),
+                gas7 : Number.parseInt(document.getElementById("gas7").value),
+                gas8 : Number.parseInt(document.getElementById("gas8").value),
+                gas9 : Number.parseInt(document.getElementById("gas9").value),
+                gas10 : Number.parseInt(document.getElementById("gas10").value)
             }
             console.log(req);
             
