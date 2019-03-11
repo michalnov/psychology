@@ -41,6 +41,7 @@ func main() {
 	r.HandleFunc("/ping", c.Ping).Methods("GET")
 	r.HandleFunc("/answer", c.Answerque).Methods("POST")
 	r.HandleFunc("/finishtest", notImplemented).Methods("POST")
+	r.HandleFunc("/gas", notImplemented).Methods("POST")
 
 	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "index.html")

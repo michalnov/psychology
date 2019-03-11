@@ -170,6 +170,57 @@ func (c *Core) Answerque(w http.ResponseWriter, r *http.Request) {
 	return
 }
 
+type gas struct {
+	Userid int `json:"userid"`
+	Gas1   int `json:"gas1"`
+	Gas2   int `json:"gas2"`
+	Gas3   int `json:"gas3"`
+	Gas4   int `json:"gas4"`
+	Gas5   int `json:"gas5"`
+	Gas6   int `json:"gas6"`
+	Gas7   int `json:"gas7"`
+	Gas8   int `json:"gas8"`
+	Gas9   int `json:"gas9"`
+	Gas10  int `json:"gas10"`
+}
+
+//GetGas --
+func (c *Core) GetGas(w http.ResponseWriter, r *http.Request) {
+	if r.Method != "POST" {
+		w.WriteHeader(200)
+		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+	}
+	var req gas
+	err := json.NewDecoder(r.Body).Decode(&req)
+	if err != nil {
+		w.WriteHeader(300)
+		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		return
+	}
+	db, err := sql.Open("mysql", c.DbMaster)
+	if err != nil {
+		w.WriteHeader(300)
+		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		return
+	}
+	defer db.Close()
+	statement, err := db.Prepare("insert into gas(userid,gas1,gas2,gas3,gas4,gas5,gas6,gas7,gas8,gas9,gas10) values(?,?,?,?,?,?,?,?,?,?,?)")
+	if err != nil {
+		w.WriteHeader(500)
+		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		return
+	}
+	_, err = statement.Exec(req.Userid, req.Gas1, req.Gas2, req.Gas3, req.Gas4, req.Gas5, req.Gas6, req.Gas7, req.Gas8, req.Gas9, req.Gas10)
+	if err != nil {
+		w.WriteHeader(500)
+		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		return
+	}
+	w.WriteHeader(200)
+	fmt.Fprintf(w, "{\"status\" : \"ok\"}")
+	return
+}
+
 //LoadTests -
 func (c *Core) LoadTests() error {
 	var swap structures.Test
