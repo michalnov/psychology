@@ -444,8 +444,10 @@ let temptest;
                 if (this.readyState == 4 && this.status == 200) {
                     setTimeout(function () {
                        block = false; 
-                    },1500);                    
-                    if (test.que[pc].ans[(params-1)].reverse) {
+                    },1500);              
+                    console.log(test.que[pc].ans[(params-1)].reverse);
+                          
+                    if (test.que[pc].ans[(params-1)].reverse == true) {
                         pc = pc - 1;
                         loadque();
                     } else {

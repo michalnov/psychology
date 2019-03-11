@@ -29,4 +29,5 @@ type Question struct {
 type Answer struct {
 	Text     string `json:"text,ommitempty"`
 	AnswerID int    `json:"answerid,ommitempty"`
+	Reverse  bool   `json:"reverse,ommitempty"`
 }
