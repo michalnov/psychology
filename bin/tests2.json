@@ -1,10 +1,10 @@
 {
     "testid" : 2233,
     "testkey" : "vztah",
-    "description" : "some text",
+    "description" : "Mojim cieľom bude zamerať sa na vzťahy a rodinu. Konkrétne založiť si rodinu a udržať si naplňujúce vzťahy.",
     "que" : [
         {
-            "text" : "Na základe čoho si vyberieš svojho/svoju partnera/ku",
+            "text" : "Na základe čoho si vyberieš svojho/svoju partnera/ku?",
             "questionid" : 1,
             "ans" : [
                 {
@@ -12,7 +12,7 @@
                     "answerid" : 101
                 },
                 {
-                    "text" : "Vyberiem si predovšetkým na yáklade priťažlivosti.",
+                    "text" : "Vyberiem si predovšetkým na základe priťažlivosti.",
                     "answerid" : 102
                 },
                 {
@@ -62,7 +62,7 @@
             "questionid" : 4,
             "ans" : [
                 {
-                    "text" : "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
+                    "text" : "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
                     "answerid" : 401
                 },
                 {
@@ -116,7 +116,7 @@
             "questionid" : 7,
             "ans" : [
                 {
-                    "text" : "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
+                    "text" : Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.,
                     "answerid" : 701
                 },
                 {
@@ -156,7 +156,7 @@
                     "answerid" : 901
                 },
                 {
-                    "text" : "Budem sa sústrediť na to, čo sa aktuálne deje v naších životoch.",
+                    "text" : "Budem sa sústrediť na to, čo sa aktuálne deje v našich životoch.",
                     "answerid" : 902
                 },
                 {
@@ -206,7 +206,7 @@
             ]
           },
           {
-            "text": "Vďaka tvjmu rozhodnutiu je opäť všetko v poriadku. Ako budeš pokračovať?",
+            "text": "Vďaka tvojmu rozhodnutiu je opäť všetko v poriadku. Ako budeš pokračovať?",
             "questionid": 12,
             "ans": [
               {
@@ -241,7 +241,7 @@
       
               {
       
-                "text": "Zariskujem narušenie chodu cele rodiny.",
+                "text": "Zariskujem narušenie chodu celej rodiny.",
       
                 "answerid": 1302
       
@@ -289,7 +289,7 @@
       
           {
       
-            "text": "Tvoje rozhodnutie spôsobilo ešte väčšie zhoršenie a tvoj/apartner/ka zvažuje, že ťa opustí.",
+            "text": "Tvoje rozhodnutie spôsobilo ešte väčšie zhoršenie a tvoj/a partner/ka zvažuje, že ťa opustí.",
       
             "questionid": 15,
       
@@ -305,7 +305,7 @@
       
               {
       
-                "text": "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
+                "text": "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
       
                 "answerid": 1502
       

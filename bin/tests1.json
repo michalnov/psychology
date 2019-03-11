@@ -1,7 +1,7 @@
 {
     "testid" : 1122,
     "testkey" : "praca",
-    "description" : "some text",
+    "description" : "Mojim cieľom bude zamerať sa na kariéru. Konkrétne dosiahnuť čo najvyššiu pozíciu a plat.",
     "que" : [
         {
             "text" : "Na základe čoho si vyberieš svoje povolanie?",
@@ -220,7 +220,7 @@
             ]
         },
         {
-            "text" : "yskytli sa ti vážne zdravotné problémy. Ak budeš pokračovať rovnako v pracovnom výkone tak sa môže tvoj stav zhoršiť ale ak poľavíš môžeš prísť o svoje miesto.",
+            "text" : "Vyskytli sa ti vážne zdravotné problémy. Ak budeš pokračovať rovnako v pracovnom výkone tak sa môže tvoj stav zhoršiť ale ak poľavíš môžeš prísť o svoje miesto.",
             "questionid" : 13,
             "ans" : [
                 {

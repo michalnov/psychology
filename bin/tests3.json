@@ -1,7 +1,8 @@
 {
     "testid" : 3344,
     "testkey" : "zazitky",
-    "description" : "some text",
+    "description" : "Mojim cieľom bude zamerať sa na užívanie si života. Konkrétne precestovať čo najviac miest a nazbierať si čo najviac zážitkov.
+    ",
     "que": [
         {
         "text": "Na základe čoho si vyberieš svoje zážitky?",
@@ -59,7 +60,7 @@
         "questionid": 4,
         "ans": [
             {
-            "text": "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
+            "text": "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
             "answerid": 401
             },
             {
@@ -110,7 +111,7 @@
         "questionid": 7,
         "ans": [
             {
-            "text": "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
+            "text": "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
             "answerid": 701
             },
             {
@@ -174,7 +175,7 @@
         ]
         },
         {
-        "text": "Urobil si nieko+lko zl7ch rozhodnutí, ktoré ti pokazili zážitky a dochádzajú ti penaize.",
+        "text": "Urobil si niekoľko zlých rozhodnutí, ktoré ti pokazili zážitky a dochádzajú ti penaize.",
         "questionid": 11,
         "ans": [
             {
@@ -250,7 +251,7 @@
             "answerid": 1501
             },
             {
-            "text": "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
+            "text": "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
             "answerid": 1502
             },{
                 "text" : "Nechcem odpovedat.",
