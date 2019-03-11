@@ -277,7 +277,7 @@
             document.getElementById("instruction").style.display = "none";
             document.getElementById("selectTest").style.display = "block";
         }
-
+let temptest;
         function startTest(param) {
             if (param == "vztah") {
                 console.log(param);
@@ -291,12 +291,13 @@
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
+                    temptest = this.responseText;
                     test = JSON.parse(this.responseText);
                 }
             };
             xhttp.open("POST", host+"/gettest", true);
             xhttp.setRequestHeader("Content-type", "application/json");
-            xhttp.send("{\"test\":\""+param+"\",\"userid\":\""+userID+"\"}");
+            xhttp.send("{\"test\":\""+param+"\",\"userid\":"+userID+"}");
             document.getElementById("selectTest").style.display = "none";
             document.getElementById("test").style.display = "block";
         }

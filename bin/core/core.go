@@ -116,6 +116,7 @@ func (c *Core) GetTest(w http.ResponseWriter, r *http.Request) {
 			}
 			w.WriteHeader(200)
 			fmt.Fprintf(w, string(resp))
+			return
 		}
 	}
 	w.WriteHeader(500)
