@@ -60,21 +60,16 @@ func (c *Core) UserHandler(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "{\"status\" : \"error\"}")
 		return
 	}
-	statement2, err := db.Prepare("SELECT LAST_INSERT_ID()")
-	if err != nil {
-		w.WriteHeader(500)
-		fmt.Fprintf(w, "{\"status\" : \"error\"}")
-		return
-	}
 	res, err := statement.Exec(req.Vek, req.Rod, req.Skola, req.Kluc)
-	id, err := strconv.ParseInt(res.LastInsertId(), 10, 64)
+	id6, err := res.LastInsertId()
+	id := strconv.FormatInt(id6, 10)
 	if err != nil {
 		w.WriteHeader(500)
 		fmt.Fprintf(w, "{\"status\" : \"error\"}")
 		return
 	}
 	w.WriteHeader(200)
-	fmt.Fprintf(w, "{\"user\" : \""+strconv.Itoa(id)+"\"}")
+	fmt.Fprintf(w, "{\"user\" : \""+id+"\"}")
 	return
 }
 
