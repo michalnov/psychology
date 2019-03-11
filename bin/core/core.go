@@ -9,6 +9,7 @@ import (
 	"strconv"
 
 	"github.com/michalnov/psychology/bin/core/structures"
+	gomail "gopkg.in/gomail.v2"
 
 	//need
 	_ "github.com/go-sql-driver/mysql" //needed
@@ -19,6 +20,8 @@ type Core struct {
 	DbMaster string
 	DbSlave  string
 	Tests    []structures.Test
+	Mail     string
+	MPass    string
 }
 
 type user struct {
@@ -258,21 +261,58 @@ func readTest(name string) (structures.Test, error) {
 	return out, nil
 }
 
-/*
-func Activationmail(email string, tokenn string, mailer str.Mail) {
-	m := gomail.NewMessage()
-	m.SetHeader("From", "martinhercka1@gmail.com")
-	m.SetHeader("To", email)
-	m.SetHeader("Subject", "Hello")
-	m.SetBody("text/html", mailer.Host+mailer.Port+"/auth/activate?token="+tokenn)
+type tomail struct {
+	Gas  gas
+	User user
+}
 
-	if mailer.Username == "" || mailer.Password == "" {
-		fmt.Println(mailer.Host + mailer.Port + "/auth/activate?token=" + tokenn)
+//Finishtest --
+func (c *Core) Finishtest(w http.ResponseWriter, r *http.Request) {
+	if r.Method != "POST" {
+		w.WriteHeader(200)
+		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+	}
+	var req tomail
+	err := json.NewDecoder(r.Body).Decode(&req)
+	if err != nil {
+		w.WriteHeader(300)
+		fmt.Fprintf(w, "{\"status\" : \"error\"}")
 		return
 	}
-	d := gomail.NewDialer("smtp.gmail.com", 587, mailer.Username, mailer.Password)
+	c.mmail(req)
+	w.WriteHeader(200)
+	fmt.Fprintf(w, "{\"status\" : \"ok\"}")
+	return
+}
+
+func (c *Core) mmail(abc tomail) {
+	text := "kluc : " + abc.User.Kluc + "\n"
+	text = text + "vek : " + abc.User.Vek + "\n"
+	text = text + "skola : " + abc.User.Skola + "\n"
+	text = text + "rod : " + abc.User.Rod + "\n\n"
+	text = text + "gas 1  : " + strconv.Itoa(abc.Gas.Gas1) + "/n"
+	text = text + "gas 2 : " + strconv.Itoa(abc.Gas.Gas2) + "/n"
+	text = text + "gas 3 : " + strconv.Itoa(abc.Gas.Gas3) + "/n"
+	text = text + "gas 4 : " + strconv.Itoa(abc.Gas.Gas4) + "/n"
+	text = text + "gas 5 : " + strconv.Itoa(abc.Gas.Gas5) + "/n"
+	text = text + "gas 6 : " + strconv.Itoa(abc.Gas.Gas6) + "/n"
+	text = text + "gas 7 : " + strconv.Itoa(abc.Gas.Gas7) + "/n"
+	text = text + "gas 8 : " + strconv.Itoa(abc.Gas.Gas8) + "/n"
+	text = text + "gas 9 : " + strconv.Itoa(abc.Gas.Gas9) + "/n"
+	text = text + "gas 10 : " + strconv.Itoa(abc.Gas.Gas10) + "/n"
+	m := gomail.NewMessage()
+	m.SetHeader("From", "michal.novotny@akademiasovy.sk")
+	m.SetHeader("To", "ester.nosalova@gmail.com")
+	m.SetHeader("Subject", "Hello")
+	m.SetBody("text/html", text)
+
+	if c.Mail == "" || c.MPass == "" {
+
+		return
+	}
+	d := gomail.NewDialer("smtp.gmail.com", 587, c.Mail, c.MPass)
 
 	if err := d.DialAndSend(m); err != nil {
 		panic(err)
+	}
 }
-*/

@@ -31,6 +31,8 @@ func main() {
 	c.DbMaster = master
 	c.DbSlave = slave
 	err = c.LoadTests()
+	c.Mail = conf.Mailer.Username
+	c.MPass = conf.Mailer.Password
 	if err != nil {
 		fmt.Println("failed to load tests")
 		return
@@ -40,7 +42,7 @@ func main() {
 	r.HandleFunc("/gettest", c.GetTest).Methods("POST")
 	r.HandleFunc("/ping", c.Ping).Methods("GET")
 	r.HandleFunc("/answer", c.Answerque).Methods("POST")
-	r.HandleFunc("/finishtest", notImplemented).Methods("POST")
+	r.HandleFunc("/finishtest", c.Finishtest).Methods("POST")
 	r.HandleFunc("/gas", c.GetGas).Methods("POST")
 
 	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
