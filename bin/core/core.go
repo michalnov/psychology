@@ -83,8 +83,8 @@ func (c *Core) GetTest(w http.ResponseWriter, r *http.Request) {
 	var req getTest
 	err := json.NewDecoder(r.Body).Decode(&req)
 	if err != nil {
-		w.WriteHeader(300)
-		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		w.WriteHeader(400)
+		fmt.Fprintf(w, "{\"status\" : \"json error\"}")
 		return
 	}
 	for _, test := range c.Tests {
@@ -97,7 +97,7 @@ func (c *Core) GetTest(w http.ResponseWriter, r *http.Request) {
 			}
 			db, err := sql.Open("mysql", c.DbMaster)
 			if err != nil {
-				w.WriteHeader(300)
+				w.WriteHeader(500)
 				fmt.Fprintf(w, "{\"status\" : \"mysql error\"}")
 				return
 			}
@@ -119,7 +119,7 @@ func (c *Core) GetTest(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	w.WriteHeader(500)
-	fmt.Fprintf(w, "{\"status\" : \"error\"}")
+	fmt.Fprintf(w, "{\"status\" : \"test not found error\"}")
 	return
 
 }

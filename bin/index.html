@@ -295,7 +295,7 @@
                 }
             };
             xhttp.open("POST", host+"/gettest", true);
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.setRequestHeader("Content-type", "application/json");
             xhttp.send("{\"test\":\""+param+"\",\"userid\":\""+userID+"\"}");
             document.getElementById("selectTest").style.display = "none";
             document.getElementById("test").style.display = "block";

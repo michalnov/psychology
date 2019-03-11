@@ -14,6 +14,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema psyche
 -- -----------------------------------------------------
+DROP SCHEMA IF EXISTS `psyche`;
 CREATE SCHEMA IF NOT EXISTS `psyche` DEFAULT CHARACTER SET utf8 ;
 USE `psyche` ;
 
@@ -83,6 +84,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `psyche`.`answered` (
   `idanswered` INT NOT NULL AUTO_INCREMENT,
   `userid` INT NOT NULL,
+  `testid` INT NOT NULL,
   `questionid` INT NOT NULL,
   `answerid` INT NOT NULL,
   `datetime` DATETIME NOT NULL DEFAULT current_tiemstamp,
