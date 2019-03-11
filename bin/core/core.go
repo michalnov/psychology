@@ -35,7 +35,7 @@ func (c *Core) Ping(w http.ResponseWriter, r *http.Request) {
 
 //UserHandler --
 func (c *Core) UserHandler(w http.ResponseWriter, r *http.Request) {
-	if r.Method == "OPTIONS" {
+	if r.Method != "POST" {
 		w.WriteHeader(200)
 		fmt.Fprintf(w, "{\"status\" : \"error\"}")
 	}
@@ -45,14 +45,12 @@ func (c *Core) UserHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		w.WriteHeader(300)
 		fmt.Fprintf(w, "{\"status\" : \"error\"}")
-		panic(err)
 		return
 	}
 	db, err := sql.Open("mysql", c.DbMaster)
 	if err != nil {
 		w.WriteHeader(300)
 		fmt.Fprintf(w, "{\"status\" : \"error\"}")
-		panic(err)
 		return
 	}
 	defer db.Close()
@@ -60,7 +58,6 @@ func (c *Core) UserHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		w.WriteHeader(500)
 		fmt.Fprintf(w, "{\"status\" : \"error\"}")
-		panic(err)
 		return
 	}
 	var id int
@@ -69,19 +66,16 @@ func (c *Core) UserHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		w.WriteHeader(500)
 		fmt.Fprintf(w, "{\"status\" : \"error\"}")
-		panic(err)
 		return
 	}
 	err = statement2.QueryRow().Scan(&id)
 	if err != nil {
 		w.WriteHeader(500)
 		fmt.Fprintf(w, "{\"status\" : \"error\"}")
-		panic(err)
 		return
 	}
 	w.WriteHeader(200)
 	fmt.Fprintf(w, "{\"user\" : \""+strconv.Itoa(id)+"\"}")
-	panic(err)
 	return
 }
 
@@ -106,14 +100,12 @@ func (c *Core) GetTest(w http.ResponseWriter, r *http.Request) {
 			if err != nil {
 				w.WriteHeader(500)
 				fmt.Fprintf(w, "{\"status\" : \"marshal error\"}")
-				panic(err)
 				return
 			}
 			db, err := sql.Open("mysql", c.DbMaster)
 			if err != nil {
 				w.WriteHeader(300)
 				fmt.Fprintf(w, "{\"status\" : \"mysql error\"}")
-				panic(err)
 				return
 			}
 			defer db.Close()
@@ -121,14 +113,12 @@ func (c *Core) GetTest(w http.ResponseWriter, r *http.Request) {
 			if err != nil {
 				w.WriteHeader(500)
 				fmt.Fprintf(w, "{\"status\" : \"sql error\"}")
-				panic(err)
 				return
 			}
 			_, err = statement.Exec(test.TestID, req.UserID)
 			if err != nil {
 				w.WriteHeader(500)
 				fmt.Fprintf(w, "{\"status\" : \"sql 2 error\"}")
-				panic(err)
 				return
 			}
 			w.WriteHeader(200)
@@ -137,7 +127,6 @@ func (c *Core) GetTest(w http.ResponseWriter, r *http.Request) {
 	}
 	w.WriteHeader(500)
 	fmt.Fprintf(w, "{\"status\" : \"error\"}")
-	panic(err)
 	return
 
 }
