@@ -9,14 +9,14 @@
         "ans": [
             {
             "text": "Vyberiem si podľa toho, ktoré budú poskytovať čo najviac adrenalínu.",
-            "answerid": 101
+           "reverse" : false,  "answerid": 101
             },
             {
             "text": "Vyberiem si podľa toho, ktoré budú čo najviac kultúrne zamerané.",
-            "answerid": 102
+           "reverse" : false,  "answerid": 102
             },{
                 "text" : "Nechcem odpovedat.",
-                "answerid" : 103
+               "reverse" : false,  "answerid" : 103
             }
         ]
         },
@@ -26,14 +26,14 @@
         "ans": [
             {
             "text": "Zameriam sa skôr na užívanie si osamote.",
-            "answerid": 201
+           "reverse" : false,  "answerid": 201
             },
             {
             "text": "Zameriam sa skôr na užívanie si s priateľmi.",
-            "answerid": 202
+           "reverse" : false,  "answerid": 202
             },{
                 "text" : "Nechcem odpovedat.",
-                "answerid" : 203
+               "reverse" : false,  "answerid" : 203
             }
         ]
         },
@@ -43,14 +43,14 @@
         "ans": [
             {
             "text": "Môj prístup bude skôr zameraný na veľa cestovania s možnosťou menšieho počtu zážitkov.",
-            "answerid": 301
+           "reverse" : false,  "answerid": 301
             },
             {
             "text": "Môj prístup bude skôr zameraný na prežívania čo najviac zážitkov na úkor cestovania a spoznávania.",
-            "answerid": 302
+           "reverse" : false,  "answerid": 302
             },{
                 "text" : "Nechcem odpovedat.",
-                "answerid" : 303
+               "reverse" : false,  "answerid" : 303
             }
         ]
         },
@@ -60,14 +60,14 @@
         "ans": [
             {
             "text": "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
-            "answerid": 401
+           "reverse" : true,  "answerid": 401
             },
             {
             "text": "Pokúsim sa si zarobiť a presvedčiť sa, že som si vybral správne.",
-            "answerid": 402
+           "reverse" : false,  "answerid": 402
             },{
                 "text" : "Nechcem odpovedat.",
-                "answerid" : 403
+               "reverse" : false,  "answerid" : 403
             }
         ]
         },
@@ -77,14 +77,14 @@
         "ans": [
             {
             "text": "Počkám, ako sa situácia vyvinie sama.",
-            "answerid": 501
+           "reverse" : false,  "answerid": 501
             },
             {
             "text": "Skúsim zariskovať na možný úkorväčšieho množstva peňazí ale s možnosťou prežiť niečo nezabudnuteľné.",
-            "answerid": 502
+           "reverse" : false,  "answerid": 502
             },{
                 "text" : "Nechcem odpovedat.",
-                "answerid" : 503
+               "reverse" : false,  "answerid" : 503
             }
         ]
         },
@@ -94,14 +94,14 @@
         "ans": [
             {
             "text": "Zvolím si viacej horších zážitkov.",
-            "answerid": 601
+           "reverse" : false,  "answerid": 601
             },
             {
             "text": "Zvolím si menej dobrých zážitkov.",
-            "answerid": 602
+           "reverse" : false,  "answerid": 602
             },{
                 "text" : "Nechcem odpovedat.",
-                "answerid" : 603
+               "reverse" : false,  "answerid" : 603
             }
         ]
         },
@@ -111,14 +111,14 @@
         "ans": [
             {
             "text": "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
-            "answerid": 701
+           "reverse" : true,  "answerid": 701
             },
             {
             "text": "Pokúsim sa zmeniť svoj prístup.",
-            "answerid": 702
+           "reverse" : false,  "answerid": 702
             },{
                 "text" : "Nechcem odpovedat.",
-                "answerid" : 703
+               "reverse" : false,  "answerid" : 703
             }
         ]
         },
@@ -128,14 +128,14 @@
         "ans": [
             {
             "text": "Zameriam sa na uživanie si osamote.",
-            "answerid": 801
+           "reverse" : false,  "answerid": 801
             },
             {
             "text": "Zameriam sa na užívanie si s priateľmi.",
-            "answerid": 802
+           "reverse" : false,  "answerid": 802
             },{
                 "text" : "Nechcem odpovedat.",
-                "answerid" : 803
+               "reverse" : false,  "answerid" : 803
             }
         ]
         },
@@ -145,14 +145,14 @@
         "ans": [
             {
             "text": "Zameriam sa na plánovanie a zisťovanie ďalších možností.",
-            "answerid": 901
+           "reverse" : false,  "answerid": 901
             },
             {
             "text": "Pokúsim sa žiť pre daný okamih.",
-            "answerid": 902
+           "reverse" : false,  "answerid": 902
             },{
                 "text" : "Nechcem odpovedat.",
-                "answerid" : 903
+               "reverse" : false,  "answerid" : 903
             }
         ]
         },
@@ -162,14 +162,14 @@
         "ans": [
             {
             "text": "Áno, využijem.",
-            "answerid": 1001
+           "reverse" : false,  "answerid": 1001
             },
             {
             "text": "Nie, nevyužijem.",
-            "answerid": 1002
+           "reverse" : false,  "answerid": 1002
             },{
                 "text" : "Nechcem odpovedat.",
-                "answerid" : 1003
+               "reverse" : false,  "answerid" : 1003
             }
         ]
         },
@@ -179,14 +179,14 @@
         "ans": [
             {
             "text": "Počkám, ako sa situácia vyvinie sama.",
-            "answerid": 1101
+           "reverse" : false,  "answerid": 1101
             },
             {
             "text": "Pokúsim sa zmeniť svoj prístup.",
-            "answerid": 1102
+           "reverse" : false,  "answerid": 1102
             },{
                 "text" : "Nechcem odpovedat.",
-                "answerid" : 1103
+               "reverse" : false,  "answerid" : 1103
             }
         ]
         },
@@ -196,14 +196,14 @@
         "ans": [
             {
             "text": "Sústredím sa čo najviac na zážitky, ktoré prežívam.",
-            "answerid": 1201
+           "reverse" : false,  "answerid": 1201
             },
             {
             "text": "Skúšam vyhľadávať a objavovať viac ako zvyčajne.",
-            "answerid": 1202
+           "reverse" : false,  "answerid": 1202
             },{
                 "text" : "Nechcem odpovedat.",
-                "answerid" : 1203
+               "reverse" : false,  "answerid" : 1203
             }
         ]
         },
@@ -213,14 +213,14 @@
         "ans": [
             {
             "text": "Zariskujem zhoršenie stavu.",
-            "answerid": 1301
+           "reverse" : false,  "answerid": 1301
             },
             {
             "text": "Zariskujem stratu zážitkov.",
-            "answerid": 1302
+           "reverse" : false,  "answerid": 1302
             },{
                 "text" : "Nechcem odpovedat.",
-                "answerid" : 1303
+               "reverse" : false,  "answerid" : 1303
             }
         ]
         },
@@ -230,14 +230,14 @@
         "ans": [
             {
             "text": "Počkám, ako sa situácia vyvinie sama.",
-            "answerid": 1401
+           "reverse" : false,  "answerid": 1401
             },
             {
             "text": "Poľavím a pokúsim sa si oddýchnuť.",
-            "answerid": 1402
+           "reverse" : false,  "answerid": 1402
             },{
                 "text" : "Nechcem odpovedat.",
-                "answerid" : 1403
+               "reverse" : false,  "answerid" : 1403
             }
         ]
         },
@@ -247,14 +247,14 @@
         "ans": [
             {
             "text": "Počkám, ako sa situácia vyvinie sama.",
-            "answerid": 1501
+           "reverse" : false,  "answerid": 1501
             },
             {
             "text": "Chcem sa vrátiť k predchádzajúcej otázke a prehodnotiť svoje rozhodnutie.",
-            "answerid": 1502
+           "reverse" : true,  "answerid": 1502
             },{
                 "text" : "Nechcem odpovedat.",
-                "answerid" : 1503
+               "reverse" : false,  "answerid" : 1503
             }
         ]
         }
