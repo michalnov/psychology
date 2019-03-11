@@ -314,19 +314,21 @@ let temptest;
         let block = false;
         function answer(params) {
             if (block) {
+                console.log("block");
+                
                 return
             }
             block = true;
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    temptest = this.responseText;
-                    test = JSON.parse(this.responseText);
                     block = false;
                     pc++;
                     loadque(pc);
                 } else if (this.readyState == 4) {
                     block = false;
+                    console.log("ans failed");
+                    
                 }
             };
             xhttp.open("POST", host+"/answer", true);
