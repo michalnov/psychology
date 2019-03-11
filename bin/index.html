@@ -431,6 +431,7 @@ let temptest;
             
         }
 
+        let rev = false;
         
         function answer(params) {
             if (block || pc > 14) {
@@ -444,12 +445,25 @@ let temptest;
                 if (this.readyState == 4 && this.status == 200) {
                     setTimeout(function () {
                        block = false; 
-                    },1500);              
+                    },1500);
+                    if (pc > 14) {
+                            finishtest();
+                            return
+                        }              
                     console.log(test.que[pc].ans[(params-1)].reverse);
-                          
-                    if (test.que[pc].ans[(params-1)].reverse == true) {
+                          if (rev) {
+                              pc = pc +2;
+                              rev = false;
+                              if (pc > 14) {
+                            finishtest();
+                            return
+                        }
+                              loadque();
+                          } else if (test.que[pc].ans[(params-1)].reverse == true && rev == false) {
                         pc = pc - 1;
                         loadque();
+                        //pc = pc + 1;
+                        rev = true
                     } else {
                         pc++;
                         if (pc > 14) {
