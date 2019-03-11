@@ -445,12 +445,19 @@ let temptest;
                     setTimeout(function () {
                        block = false; 
                     },1500);
-                    pc++;
-                    if (pc > 14) {
-                        finishtest();
-                        return
+                    console.log(test.que[pc].ans[(params-1)].text);
+                    
+                    if (test.que[pc].ans[(params-1)].reverse) {
+                        pc = pc - 1;
+                        loadque();
+                    } else {
+                        pc++;
+                        if (pc > 14) {
+                            finishtest();
+                            return
+                        }
+                        loadque();
                     }
-                    loadque();
                 } else if (this.readyState == 4) {
                     block = false;
                     console.log("ans failed");
