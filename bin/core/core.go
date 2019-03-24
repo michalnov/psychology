@@ -173,6 +173,53 @@ func (c *Core) Answerque(w http.ResponseWriter, r *http.Request) {
 	return
 }
 
+type acris struct {
+	Userid int `json:"userid"`
+	Acris1 int `json:"acris1"`
+	Acris2 int `json:"acris2"`
+	Acris3 int `json:"acris3"`
+	Acris4 int `json:"acris4"`
+	Acris5 int `json:"acris5"`
+	Acris6 int `json:"acris6"`
+}
+
+//GetAcris --
+func (c *Core) GetAcris(w http.ResponseWriter, r *http.Request) {
+	if r.Method != "POST" {
+		w.WriteHeader(200)
+		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+	}
+	var req acris
+	err := json.NewDecoder(r.Body).Decode(&req)
+	if err != nil {
+		w.WriteHeader(300)
+		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		return
+	}
+	db, err := sql.Open("mysql", c.DbMaster)
+	if err != nil {
+		w.WriteHeader(300)
+		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		return
+	}
+	defer db.Close()
+	statement, err := db.Prepare("insert into acris(userid,acris1,acris2,acris3,acris4,acris5,acris6) values(?,?,?,?,?,?,?)")
+	if err != nil {
+		w.WriteHeader(500)
+		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		return
+	}
+	_, err = statement.Exec(req.Userid, req.Acris1, req.Acris2, req.Acris3, req.Acris4, req.Acris5, req.Acris6)
+	if err != nil {
+		w.WriteHeader(500)
+		fmt.Fprintf(w, "{\"status\" : \"error\"}")
+		return
+	}
+	w.WriteHeader(200)
+	fmt.Fprintf(w, "{\"status\" : \"ok\"}")
+	return
+}
+
 type gas struct {
 	Userid int `json:"userid"`
 	Gas1   int `json:"gas1"`

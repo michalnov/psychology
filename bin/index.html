@@ -142,6 +142,71 @@
                         <p style="width:95%; margin:auto;" onclick="answer(3)">Nechcem odpovedat</p>
                     </div>
                 </div>
+
+                <div  style="display: none;" id="acrisscale">
+                    <div ><h4 style="margin-bottom: 20px;">Dobrý deň, tento krátky dotazník sa týka Vášho vybraného cieľa. Ešte predtým, ako začnete prosím vyznačte v akej miere súhlasíte s výrokmi týkajúcimi sa Vášho vybraného cieľa. Tieto výroky budete hodnotiť na stupnici od 1 (úplne nepravdivé) až po 5 (úplne pravdivé). Prosím odpovedajte úprimne.</h4></div>
+                    <div class="acris">
+                        <p style="width:95%; margin:auto;"> <b>Mám pochybnosti, či by som sa mal(a) aj naďalej usilovať o dosiahnutie môjho cieľa alebo mám od neho upustiť.</b></p>
+                        <table>
+                            <tr>
+                                <td style="width: 25%;">úplne nepravdivé</td>
+                                <td><input type="range" name="acris1" id="acris1" max="5" min="1" value="3"></td>
+                                <td style="width: 25%;">úplne pravdivé</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="acris">
+                        <p style="width:95%; margin:auto;"> <b>Práca na dosahovaní tohto cieľa ide bez akýchkoľvek problémov.</b></p>
+                        <table>
+                            <tr>
+                                <td style="width: 25%;">úplne nepravdivé</td>
+                                <td><input type="range" name="acris2" id="acris2" max="5" min="1" value="3"></td>
+                                <td style="width: 25%;">úplne pravdivé</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="acris">
+                        <p style="width:95%; margin:auto;"> <b>Počas dosahovania tohto cieľa som opakovane konfrontovaný(á) so situáciami, v ktorých neviem ako mám (ďalej) pokračovať.</b></p>
+                        <table>
+                            <tr>
+                                <td style="width: 25%;">úplne nepravdivé</td>
+                                <td><input type="range" name="acris3" id="acris3" max="5" min="1" value="3"></td>
+                                <td style="width: 25%;">úplne pravdivé</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="acris">
+                        <p style="width:95%; margin:auto;"> <b>Opakovane musím myslieť na môj cieľ.</b></p>
+                        <table>
+                            <tr>
+                                <td style="width: 25%;">úplne nepravdivé</td>
+                                <td><input type="range" name="acris4" id="acris4" max="5" min="1" value="3"></td>
+                                <td style="width: 25%;">úplne pravdivé</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="acris">
+                        <p style="width:95%; margin:auto;"> <b>Opakovane som pre svoj cieľ nič neurobil(a), napriek zámeru (tak urobiť).</b></p>
+                        <table>
+                            <tr>
+                                <td style="width: 25%;">úplne nepravdivé</td>
+                                <td><input type="range" name="acris5" id="acris5" max="5" min="1" value="3"></td>
+                                <td style="width: 25%;">úplne pravdivé</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="acris">
+                        <p style="width:95%; margin:auto;"> <b>Rozmýšľal(a) som, že upustím od môjho cieľa.</b></p>
+                        <table>
+                            <tr>
+                                <td style="width: 25%;">úplne nepravdivé</td>
+                                <td><input type="range" name="acris6" id="acris6" max="5" min="1" value="3"></td>
+                                <td style="width: 25%;">úplne pravdivé</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="margin-left: 30%;"><button id="endacris" class="btn btn-success"  onclick="sendacris()">Dokončiť</button></div>
+                </div>
                 <div  style="display: none;" id="gasscale">
                     <div ><h4 style="margin-bottom: 20px;">Ľudia počas svojho života nedokážu vždy dosiahnuť to, čo chcú a niekedy sú nútení ukončiť svoje snahy o dosahovanie cieľov, ktoré si stanovili. Zaujíma nás, ako, by ste reagovali v tomto prípade. Označte mieru Vášho súhlasu alebo nesúhlasu s každým z nasledujúcich tvrdení podľa toho, ako vystihujú Vaše správanie v tejto situácii.</h4></div>
                     <div class="gas">
@@ -446,9 +511,9 @@ let temptest;
         }
 
         function finishtest() {
-            overlayOn();
+            //overlayOn();
             document.getElementById("test").style.display = "none";
-            
+            document.getElementById("acrisscale").style.display = "block";
         }
 
         let rev = false;
@@ -503,6 +568,34 @@ let temptest;
             xhttp.open("POST", host+"/answer", true);
             xhttp.setRequestHeader("Content-type", "application/json");
             xhttp.send("{\"testid\":"+test.testid+",\"userid\":"+userID+",\"questionid\":"+test.que[pc].questionid+",\"answerid\":"+test.que[pc].ans[(params-1)].answerid+"}");
+        }
+
+        function sendacris() {
+            block = true;
+            req = {
+                userid : Number.parseInt(userID),
+                acris1 : Number.parseInt(document.getElementById("acris1").value),
+                acris2 : Number.parseInt(document.getElementById("acris2").value),
+                acris3 : Number.parseInt(document.getElementById("acris3").value),
+                acris4 : Number.parseInt(document.getElementById("acris4").value),
+                acris5 : Number.parseInt(document.getElementById("acris5").value),
+                acris6 : Number.parseInt(document.getElementById("acris6").value)
+            }
+            console.log(req);
+            
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("acrisscale").style.display = "none";
+                    document.getElementById("gasscale").style.display = "block";
+                } else if (this.readyState == 4) {
+                    console.log("acris failed");
+                }
+            
+            };
+            xhttp.open("POST", host+"/acris", true);
+            xhttp.setRequestHeader("Content-type", "application/json");
+            xhttp.send(JSON.stringify(req));
         }
 
         function sendgas() {
