@@ -498,7 +498,7 @@
             document.getElementById("instruction").style.display = "none";
             document.getElementById("selectTest").style.display = "block";
         }
-let temptest;
+        let temptest;
         function startTest(param) {
             if (param == "vztah") {
                 console.log(param);
@@ -642,6 +642,7 @@ let temptest;
                     document.getElementById("gasscale").style.display = "none";
                     eend();
                     overlayOn2();
+                    stopPing();
                 } else if (this.readyState == 4) {
                     console.log("gas failed");
                 }
