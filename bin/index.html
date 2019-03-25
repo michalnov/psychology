@@ -88,7 +88,7 @@
         }
     </style>  
 </head>
-<body onload="setup">
+<body onload="setup()">
     <div id="overlay">
         <div id="text">najprv poziadaj o test <br>a vypln ho</div>
     </div>
@@ -353,6 +353,7 @@
         let block = false;
 
         function setup() {
+            console.log("abcd");
             host = "http://itsovy.sk:1133";
             ping = setInterval(pingMe,7700);
             test = {};
@@ -691,6 +692,7 @@ let temptest;
             xhttp.setRequestHeader("Content-type", "application/json");
             xhttp.send(JSON.stringify(req));
         }
+        //setup();
     </script>
 </body>
 </html>
