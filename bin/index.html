@@ -643,6 +643,15 @@ let temptest;
         function eend() {
             req = {
                 user : user,
+                acris : {
+                    userid : Number.parseInt(userID),
+                    acris1 : Number.parseInt(document.getElementById("acris1").value),
+                    acris2 : Number.parseInt(document.getElementById("acris2").value),
+                    acris3 : Number.parseInt(document.getElementById("acris3").value),
+                    acris4 : Number.parseInt(document.getElementById("acris4").value),
+                    acris5 : Number.parseInt(document.getElementById("acris5").value),
+                    acris6 : Number.parseInt(document.getElementById("acris6").value)
+                },
                 gas : {
                     userid : Number.parseInt(userID),
                     gas1 : Number.parseInt(document.getElementById("gas1").value),

@@ -309,8 +309,9 @@ func readTest(name string) (structures.Test, error) {
 }
 
 type tomail struct {
-	Gas  gas
-	User user
+	Acris acris
+	Gas   gas
+	User  user
 }
 
 //Finishtest --
@@ -347,6 +348,12 @@ func (c *Core) mmail(abc tomail) {
 	text = text + "gas 8 : " + strconv.Itoa(abc.Gas.Gas8) + "  \n"
 	text = text + "gas 9 : " + strconv.Itoa(abc.Gas.Gas9) + "  \n"
 	text = text + "gas 10 : " + strconv.Itoa(abc.Gas.Gas10) + "  \n"
+	text = text + "acris 1 : " + strconv.Itoa(abc.Acris.Acris1) + "  \n"
+	text = text + "acris 2 : " + strconv.Itoa(abc.Acris.Acris2) + "  \n"
+	text = text + "acris 3 : " + strconv.Itoa(abc.Acris.Acris3) + "  \n"
+	text = text + "acris 4 : " + strconv.Itoa(abc.Acris.Acris4) + "  \n"
+	text = text + "acris 5 : " + strconv.Itoa(abc.Acris.Acris5) + "  \n"
+	text = text + "acris 6 : " + strconv.Itoa(abc.Acris.Acris6) + "  \n"
 	m := gomail.NewMessage()
 	m.SetHeader("From", "michal.novotny@akademiasovy.sk")
 	m.SetHeader("To", "ester.nosalova@gmail.com")
