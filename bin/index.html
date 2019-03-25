@@ -88,7 +88,7 @@
         }
     </style>  
 </head>
-<body>
+<body onload="setup">
     <div id="overlay">
         <div id="text">najprv poziadaj o test <br>a vypln ho</div>
     </div>
@@ -98,9 +98,9 @@
     <div class="container">
         <div class="row" id="about">
             <div class="col-sm-4"><span>application status: <span class="dot" id="indicator"></span></span></div>
-            <div class="col-sm-4">
+            <div class="col-sm-4" >
                 <div> 
-                    <table id="headform" style="width:85%; margin:auto; margin-top: 5%;">
+                    <table id="headform" style="display: none; width:85%; margin:auto; margin-top: 5%;">
                         <tr>
                             <td><h4>Kluc</h4></td>
                             <td><input type="text" style="border-radius:7px" id="kluc" onchange="testUser('kluc')"><span class="dotErr" name="dotErr" id="errkluc"></span></td>
@@ -345,12 +345,23 @@
 
     <script>
         let host = "http://itsovy.sk:1133";
-        let ping = setInterval(pingMe,7700);
+        let ping = null;
         let test = {};
         let user = {};
         let userID = 0;
         let pc = 0;
         let block = false;
+
+        function setup() {
+            host = "http://itsovy.sk:1133";
+            ping = setInterval(pingMe,7700);
+            test = {};
+            user = {};
+            userID = 0;
+            pc = 0;
+            block = false;
+            document.getElementById("headform").style.display = "block";
+        }
 
         class Test{
             constructor(param){
